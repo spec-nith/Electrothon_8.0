@@ -21,13 +21,12 @@
   /* MAIN TITLE */
   .missionTitle {
     font-family: "Press Start 2P", cursive;
-    font-size: 60px;
-    letter-spacing: 0.2em;
+    font-size: 37px;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 94px;
     margin-top: 0px;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
     white-space: nowrap;
     text-shadow: 
     0 0 12px rgba(255, 255, 255, 0.9),
@@ -40,7 +39,7 @@
     display: flex;
     gap: 100px;
     width: 100%;
-    max-width: 1700px;
+    max-width: 1200px;
     align-items: flex-start;
     justify-content: space-between;
     margin-inline: auto;
@@ -49,27 +48,29 @@
   /* LEFT COLUMN */
   .leftColumn {
     flex: 1.1;
-    max-width: 80%;
+    max-width: 60%;
     display: flex;
     flex-direction: column;
-    margin-left: -180px;
+    margin-left: -50px;
     gap: 24px;
+    align-items: center;
   }
   
   .subheading {
     font-family: "Press Start 2P", cursive;
-    font-size: 35px;
+    font-size: 25px;
     letter-spacing: 0.2em;
     white-space: nowrap;
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-    margin-left: -20px;
+    margin-left: 0px;
     margin-top: 0px;
+    margin-bottom: 0px;
   }
   .subheading2 {
     font-family: "Press Start 2P", cursive;
-    font-size: 35px;
+    font-size: 25px;
     letter-spacing: 0.2em;
     white-space: nowrap;
     text-transform: uppercase;
@@ -77,18 +78,18 @@
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
     margin-left: 0px;
     margin-left: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   
   .aboutText {
     font-family: "Anonymous Pro", monospace;
-    font-size: 25px;
-    line-height: 1.7;
+    font-size: 17px;
+    line-height: 1.5;
     margin-left: 50px;
     text-align: center;
-    max-width: 1400px;
+    max-width: 1100px;
     color: #f3ebff;
-    margin: 10px auto 30px auto;   
+    margin: 0px auto 17px auto;   
     text-shadow: 
     0 0 15px rgb(255, 255, 255),
     0 0 25px rgba(170, 120, 255, 0.25);
@@ -104,15 +105,15 @@
     display: flex;
     justify-content: center;
     gap: 32px;
-    margin-top: 18px;
+    margin-top: 10px;
     flex-wrap: nowrap;
-    margin-left: 45px;
+    margin-left: 30px;
   }
   
-  /* ✅ Normal glass cards instead of image frames */
+  /*  Normal glass cards instead of image frames */
   .achievementCard {
-    width: 280px;
-    height: 160px;
+    width: 150px;
+    height: 110px;
     border-radius: 18px;
   
     /* blurred + transparent background */
@@ -143,13 +144,13 @@
   
   .achievementNumber {
     font-family: "Press Start 2P", cursive;
-    font-size: 24px;
+    font-size: 20px;
     color: #ffffff;
     margin-bottom: 8px;
   }
   
   .achievementLabel {
-    font-size: 18px;
+    font-size: 14px;
     text-shadow: 
     0 0 10px rgba(255, 255, 255, 0.7),
     0 0 22px rgba(180, 140, 255, 0.6);
@@ -168,13 +169,13 @@
   }
   
   .arcadeImage {
-    width: 600px; 
-    margin-top: 0px;                /* 👉 yahi se size control hoga */
+    width: 440px; 
+    margin-top: -20px;                /*  yahi se size control hoga */
     height: auto;
     max-height: none;
     image-rendering: pixelated;
     transform: translateY(30px);
-    transform: translateX(70px);
+    transform: translateX(50px);
     filter: drop-shadow(0 0 20px rgba(161, 131, 255, 0.9));
   }
   
@@ -211,4 +212,3 @@
       }
       
   }
-  
