@@ -1,6 +1,9 @@
-/** @type {import('next').fig} */
-const fig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    optimizePackageImports: ['framer-motion'],
+  },
+  turbopack: {},
 };
 
-export default fig;
+export default nextConfig;

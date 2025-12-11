@@ -5,12 +5,11 @@ import FAQList from "@/components/FAQList";
 import Footer from "@/components/Footer";
 import specLogo from "@/assets/images/spec-logo.png";
 import MainPage from "@/components/MainPage";
-import Gallery from "@/components/Gallery";
 import MissionBriefing from "@/components/MissionBriefing";
 import Themes from "@/components/ThemesSection/ThemesSection";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Timeline from "@/components/Timeline/timeline";
-
+import GalleryPage from "@/components/gallery/gallery";
 
 export default function Page() {
   return (
@@ -55,9 +54,9 @@ export default function Page() {
       <MainPage />
 
       <MissionBriefing />
-      <Gallery />
       <Themes />
-      <Timeline />        
+      <Timeline /> 
+      <GalleryPage />       
       <Testimonials />
       <FAQList />
     <Footer />
