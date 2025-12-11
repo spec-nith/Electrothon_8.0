@@ -159,9 +159,6 @@ const FAQList = () => {
             <h2 className="text-white font-extrabold text-4xl md:text-5xl leading-tight" style={{ fontFamily: "'Press Start 2P', cursive" }}>
               Frequently asked questions
             </h2>
-            <p className="mt-4 text-gray-300 max-w-2xl">
-              Answers to the most common questions about the event, travel, eligibility, and more. If you still have questions, reach out to us via the contact section below.
-            </p>
 
             {/* Category Tabs centered */}
             <div className="mt-8 mb-6 flex flex-wrap justify-center gap-3">

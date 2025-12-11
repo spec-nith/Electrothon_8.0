@@ -111,7 +111,7 @@ export default function ContactBlocks() {
         <div className="mt-6">
           <button
             type="button"
-            onClick={() => window.open('https://electrothon.nith.ac.in/', '_blank')}
+            onClick={() => window.open('https://electrothon-7-0.vercel.app/', '_blank')}
             className="relative text-white font-bold bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg transition-all duration-300 px-4 py-2 sm:px-6 sm:py-3 rounded-lg border-2 border-blue-500"
             style={{ fontFamily: "'Press Start 2P', cursive", fontSize: '0.65rem' }}
           >
