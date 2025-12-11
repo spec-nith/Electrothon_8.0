@@ -1,6 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+/** @type {import('next').fig} */
+const fig = {
   /* config options here */
 };
 
-export default nextConfig;
+export default fig;
