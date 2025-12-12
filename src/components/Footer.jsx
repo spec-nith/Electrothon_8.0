@@ -4,7 +4,7 @@ import React from 'react';
 import { Github, Linkedin, Instagram, Mail, X } from 'lucide-react';
 import Image from 'next/image';
 import specLogo from '@/assets/images/spec-logo.png';
-import ContactUs1 from './ContactUs1';
+import ContactUs1 from '@/components/ui/ContactUs1';
 
 export default function Footer() {
   

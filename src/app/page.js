@@ -4,11 +4,10 @@ import FloatingNav from "@/components/FloatingNav";
 import FAQList from "@/components/FAQList";
 import Footer from "@/components/Footer";
 import specLogo from "@/assets/images/spec-logo.png";
-<<<<<<< HEAD
 import MainPage from "@/components/MainPage";
-=======
+
 import Gallery from "@/components/Gallery";
->>>>>>> FAQs+Footer
+
 import MissionBriefing from "@/components/MissionBriefing";
 import Themes from "@/components/ThemesSection/ThemesSection";
 import Testimonials from "@/components/Testimonials/Testimonials";
@@ -35,7 +34,6 @@ export default function Page() {
       <div className={styles.logoWrapper}>
         <Image src={specLogo} alt="SPEC Logo" width={150} height={150} />
       </div>
-<<<<<<< HEAD
 
       <nav className={styles.navbar}>
   {/* <div className={styles.centerNav}> */}
@@ -57,20 +55,15 @@ export default function Page() {
    
     
       <MainPage />
-
       <MissionBriefing />
       <Themes />
       <Timeline /> 
       <GalleryPage />       
-=======
-      <MissionBriefing />
-      <Themes />
->>>>>>> FAQs+Footer
       <Testimonials />
       <Timeline />        
       <Gallery />
       <FAQList />
-    <Footer />
+      <Footer />
     
     </>
   );
