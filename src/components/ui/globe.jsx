@@ -227,7 +227,7 @@ export function World({ data, dataUrl, globeConfig = {}, style = {} }) {
           if (!arcs || !arcs.length) return;
           globe
             .arcsData(arcs)
-            .arcColor((d) => d.color || globeConfig.arcColor || '#38bdf8')
+            .arcColor((d) => d.color || globeConfig.arcColor || '#a855f7')
             .arcDashLength(globeConfig.arcLength ?? 0.9)
             .arcDashGap(globeConfig.arcDashGap ?? 4)
             .arcDashInitialGap(() => Math.random())

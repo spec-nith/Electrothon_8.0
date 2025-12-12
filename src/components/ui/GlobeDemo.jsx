@@ -21,7 +21,7 @@ export function GlobeDemo({ embedded = false }) {
     emissiveIntensity: 0.8,
     // Tint the texture to match the violet theme
     tintColor: '#7c3aed',
-    tintIntensity: 0.4,
+    tintIntensity: 0.7,
     shininess: 0.9,
     specular: "#ffffff",
     polygonColor: "rgba(255,255,255,0.7)",
@@ -48,7 +48,7 @@ export function GlobeDemo({ embedded = false }) {
     cameraDistance: 300,
   };
 
-  const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
+  const colors = ["#a855f7", "#9333ea", "#c084fc"];
   const sampleArcs = [
     {
       order: 1,
