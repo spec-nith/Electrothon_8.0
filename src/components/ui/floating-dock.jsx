@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { cn } from "@/lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
@@ -50,9 +50,11 @@ const FloatingDockMobile = ({ items, className }) => {
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
+                {/* mobile: the whole circular anchor stays the cursor target for mobile buttons */}
                 <a
                   href={item.href}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
+                  className="cursor-target inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
+                  aria-label={item.title}
                 >
                   <div className="h-4 w-4">{item.icon}</div>
                 </a>
@@ -65,6 +67,7 @@ const FloatingDockMobile = ({ items, className }) => {
       <button
         onClick={() => setOpen(!open)}
         className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        aria-label="Open navigation"
       >
         <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
       </button>
@@ -120,19 +123,18 @@ function IconContainer({ mouseX, title, icon, href }) {
   });
 
   return (
-    <a href={href}>
+    <a href={href} className="inline-block" aria-label={title}>
+      {/* Outer motion.div still controls width and is measured by the ref */}
       <motion.div
         ref={ref}
         style={{ width }}
-        className="
-          group relative flex items-center justify-center rounded-full
-    transition-all duration-200
-        "
+        className="group relative flex items-center justify-center rounded-full transition-all duration-200"
       >
+        {/* Inner visual pill gets the cursor-target class so the cursor snaps to the visible pill
+            without interfering with the outer width animation. */}
         <motion.div
           style={{ scale }}
-          className="flex space-between px-5 py-2.5 rounded-full bg-[rgba(78, 11, 149, 0.46)]
-           border border-white/30 backdrop-blur-md text-white text-sm font-semibold"
+          className="cursor-target flex px-5 py-2.5 rounded-full bg-[rgba(78,11,149,0.46)] border border-white/30 backdrop-blur-md text-white text-sm font-semibold"
         >
           {icon}
         </motion.div>

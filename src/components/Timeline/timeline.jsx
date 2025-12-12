@@ -134,7 +134,7 @@ const PacmanTimeline = () => {
         </div>
 
         {/* --- BLOCKS LANE --- */}
-        <div className="blocks-lane" style={{ top: `${HEADER_HEIGHT}px` }}>
+        <div className="blocks-lane " style={{ top: `${HEADER_HEIGHT}px` }}>
           {events.map((ev, index) => {
             const relativeY = (index * BLOCK_SPACING) + TOP_OFFSET;
             const isActive = scrollDistance >= (relativeY + HEADER_HEIGHT - 50);
@@ -149,7 +149,7 @@ const PacmanTimeline = () => {
                     <div className="connector-dot"></div>
                 </div>
                 
-                <div className="holo-card">
+                <div className="cursor-target holo-card">
                   <div className="card-content">
                     <h3 className="card-title">{ev.title}</h3>
                     <div className="card-divider"></div>

@@ -58,7 +58,7 @@ export default function MissionBriefing() {
 
             <div className={styles.achievementsRow}>
               {achievements.map((item) => (
-                <div key={item.number} className={styles.achievementCard}>
+                <div key={item.number} className={`${styles.achievementCard} cursor-target`}>
                   <div className={styles.achievementContent}>
                     <div className={styles.achievementNumber}>
                       {item.number}

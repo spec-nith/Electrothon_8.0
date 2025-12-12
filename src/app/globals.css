@@ -161,3 +161,17 @@
 .flip-back {
   transform: rotateY(180deg);
 }
+
+/* Target Cursor */
+.cursor-target {
+  display: inline-block; 
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cursor-target:focus-visible {
+  outline: 2px solid rgba(213,139,255,0.7); 
+  outline-offset: 2px;
+}
+
+.cursor-target { outline: 2px dashed rgba(255,0,0,0.6); }

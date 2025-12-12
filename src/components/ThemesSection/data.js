@@ -1,9 +1,9 @@
-import blockchain from "@/assets/ThemesSection/blockchain.webp";
-import Edtech from "@/assets/ThemesSection/Edtech.webp";
-import foodtech from "@/assets/ThemesSection/foodtech.webp"; 
-import health from "@/assets/ThemesSection/health.webp";
-import open_innov from "@/assets/ThemesSection/open_innov.webp";
-import climate from "@/assets/ThemesSection/climate.webp";
+import blockchain from "@/assets/ThemesSection/cyber.png";
+import Edtech from "@/assets/ThemesSection/edtech.jpeg";
+import foodtech from "@/assets/ThemesSection/travel.png"; 
+import health from "@/assets/ThemesSection/healthcare.png";
+import open_innov from "@/assets/ThemesSection/innov.jpg";
+import climate from "@/assets/ThemesSection/climate.jpg";
 
 export const tabData = [
   {
@@ -12,7 +12,7 @@ export const tabData = [
     content:
       "Across vast kingdoms and treacherous seas, the movement of people and goods faces many challenges. Knights and merchants alike seek safer passages, smarter travel systems, and better accommodations. Build innovations that redefine how the world travels.",
     img1: foodtech,
-    prize_amt: "To be announced",
+    
   },
 
   {
@@ -21,7 +21,7 @@ export const tabData = [
     content:
       "Our world faces rising temperatures, floods, droughts, and environmental imbalance. Innovators are needed to create sustainable technologies, track climate change, and protect the planet for future generations.",
     img1: climate,
-    prize_amt: "To be announced",
+    
   },
 
   {
@@ -30,7 +30,7 @@ export const tabData = [
     content:
       "From disease prediction to smart diagnostics and patient monitoring, healthcare innovation is more important than ever. Build solutions that save lives and make quality healthcare accessible to all.",
     img1: health,
-    prize_amt: "To be announced",
+    
   },
 
   {
@@ -39,7 +39,7 @@ export const tabData = [
     content:
       "Protect digital assets, prevent cyber attacks, and build trust using blockchain technology. Create secure systems that defend data, networks, and financial infrastructure in the modern digital world.",
     img1: blockchain,
-    prize_amt: "To be announced",
+    
   },
 
   {
@@ -48,7 +48,7 @@ export const tabData = [
     content:
       "Revolutionize education with smart platforms, adaptive learning systems, AI tutors, and digital classrooms. Make knowledge accessible, engaging, and powerful for learners everywhere.",
     img1: Edtech,
-    prize_amt: "To be announced",
+    
   },
 
   {
@@ -57,6 +57,6 @@ export const tabData = [
     content:
       "No limits. No boundaries. If your idea solves a real problem and doesn’t fit into any category, this is your battlefield. Bring your most creative, bold, and powerful innovations here.",
     img1: open_innov,
-    prize_amt: "To be announced",
+    
   },
 ];

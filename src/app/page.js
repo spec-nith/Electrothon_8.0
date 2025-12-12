@@ -1,9 +1,12 @@
+
 import Image from "next/image";
 import styles from "../styles/hero.module.css";
 import FloatingNav from "@/components/FloatingNav";
 import FAQList from "@/components/FAQList";
 import Footer from "@/components/Footer";
 import specLogo from "@/assets/images/spec-logo.png";
+import TargetCursor from '@/components/TargetCursor';
+
 import MainPage from "@/components/MainPage";
 
 import Gallery from "@/components/Gallery";
@@ -17,6 +20,7 @@ import GalleryPage from "@/components/gallery/gallery";
 export default function Page() {
   return (
     <>
+
       <div className={styles.heroWrapper}>
 
       <video
@@ -52,16 +56,15 @@ export default function Page() {
       </div>
 
     </div>
-   
-    
+  
+      <TargetCursor />
+
       <MainPage />
       <MissionBriefing />
       <Themes />
       <Timeline /> 
       <GalleryPage />       
       <Testimonials />
-      <Timeline />        
-      <Gallery />
       <FAQList />
       <Footer />
     

@@ -30,7 +30,9 @@ export default function MainPage() {
         <h1 className={styles.title}>ELECTROTHON 8.0</h1>
         <h2 className={styles.subtitle}>LABYRINTH OF ETERNUM</h2>
 
-        <button className={styles.ctaButton}>Register Here</button>
+        <button className={`${styles.ctaButton} cursor-target`}>
+          Register Here
+        </button>
       </div>
     </div>
   );
