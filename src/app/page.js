@@ -7,9 +7,11 @@ import Footer from "@/components/Footer";
 import specLogo from "@/assets/images/spec-logo.png";
 import TargetCursor from '@/components/TargetCursor';
 
+
 import MainPage from "@/components/MainPage";
 
 import Gallery from "@/components/Gallery";
+
 
 import MissionBriefing from "@/components/MissionBriefing";
 import Themes from "@/components/ThemesSection/ThemesSection";
@@ -58,7 +60,6 @@ export default function Page() {
     </div>
   
       <TargetCursor />
-
       <MainPage />
       <MissionBriefing />
       <Themes />
