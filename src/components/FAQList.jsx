@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Dropdown from './ui/Dropdown';
+import TargetCursor from './TargetCursor';
 
 // Import the font
 import '@/styles/hero.module.css';
@@ -137,6 +138,8 @@ const FAQList = () => {
       className="relative w-full py-24 min-h-screen flex items-center justify-center"
       id="faqs"
     >
+      <TargetCursor targetSelector=".cursor-target" />
+      
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0"
@@ -166,7 +169,7 @@ const FAQList = () => {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${activeCategory === cat.id ? 'bg-blue-600 text-white' : 'bg-white/5 text-gray-300 hover:bg-white/6'}`}
+                  className={`cursor-target rounded-full px-4 py-2 text-sm font-medium transition-all ${activeCategory === cat.id ? 'bg-blue-600 text-white' : 'bg-white/5 text-gray-300 hover:bg-white/6'}`}
                 >
                   {cat.label}
                 </button>

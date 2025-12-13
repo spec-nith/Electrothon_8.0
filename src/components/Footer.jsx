@@ -5,6 +5,7 @@ import { Github, Linkedin, Instagram, Mail, X } from 'lucide-react';
 import Image from 'next/image';
 import specLogo from '@/assets/images/spec-logo.png';
 import ContactUs1 from '@/components/ui/ContactUs1';
+import TargetCursor from './TargetCursor';
 
 export default function Footer() {
   
@@ -14,6 +15,8 @@ export default function Footer() {
       id="contact" 
       className="relative w-full py-24 min-h-screen flex items-center justify-center text-gray-800"
     >
+      <TargetCursor targetSelector=".cursor-target" />
+      
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0"
@@ -56,7 +59,7 @@ export default function Footer() {
                   href="https://spec.nith.ac.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="opacity-90 hover:opacity-100 transition-opacity"
+                  className="cursor-target opacity-90 hover:opacity-100 transition-opacity"
                   style={{
                     filter: 'drop-shadow(0 0 10px #D58BFF)',
                   }}
@@ -83,7 +86,7 @@ export default function Footer() {
                       href="https://electrothon-7-0.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-gray-300"
+                      className="cursor-target hover:text-gray-300"
                     >
                       Official Website
                     </a>
@@ -93,7 +96,7 @@ export default function Footer() {
                       href="https://spec.nith.ac.in/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-gray-300"
+                      className="cursor-target hover:text-gray-300"
                     >
                       SPEC NITH
                     </a>
@@ -115,7 +118,7 @@ export default function Footer() {
                       href="https://www.google.com/maps/place/NIT+Hamirpur/@31.6750134,76.5271587,13z"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-gray-300"
+                      className="cursor-target hover:text-gray-300"
                     >
                       NIT Hamirpur
                     </a>
@@ -138,7 +141,7 @@ export default function Footer() {
                     href="https://github.com/spec-nith"
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="hover:opacity-100"
+                    className="cursor-target hover:opacity-100"
                   >
                     <Github className="text-white text-xl" />
                   </a>
@@ -146,7 +149,7 @@ export default function Footer() {
                     href="https://www.linkedin.com/company/s-p-e-c-nith/posts/?feedView=all"
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="hover:opacity-100"
+                    className="cursor-target hover:opacity-100"
                   >
                     <Linkedin className="text-blue-500 text-xl" />
                   </a>
@@ -154,7 +157,7 @@ export default function Footer() {
                     href="https://twitter.com/electrothon"
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="hover:opacity-100"
+                    className="cursor-target hover:opacity-100"
                   >
                     <X className="text-white text-xl" />
                   </a>
@@ -162,14 +165,14 @@ export default function Footer() {
                     href="https://instagram.com/s.p.e.c_nith"
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="hover:opacity-100"
+                    className="cursor-target hover:opacity-100"
                   >
                     <Instagram className="text-pink-600 text-xl" />
                   </a>
                   <a
                     href="mailto:spec@nith.ac.in"
                     rel="noreferrer noopener"
-                    className="hover:opacity-100"
+                    className="cursor-target hover:opacity-100"
                   >
                     <Mail className="text-gray-300 text-xl" />
                   </a>
@@ -180,7 +183,7 @@ export default function Footer() {
                   <button
                     type="button"
                     onClick={() => window.open('https://electrothon-7-0.vercel.app/', '_blank')}
-                    className="relative text-white font-bold bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg transition-all duration-300 px-4 py-2 sm:px-6 sm:py-3 rounded-lg border-2 border-blue-500"
+                    className="cursor-target relative text-white font-bold bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg transition-all duration-300 px-4 py-2 sm:px-6 sm:py-3 rounded-lg border-2 border-blue-500"
                     style={{ fontFamily: "'Press Start 2P', cursive", fontSize: '0.65rem' }}
                   >
                     Visit Electrothon

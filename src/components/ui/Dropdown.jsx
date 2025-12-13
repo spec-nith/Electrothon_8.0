@@ -1,6 +1,6 @@
- 'use client';
+'use client';
 
-import React, { useState, useRef, useEffect, useId } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 // Reworked Dropdown to behave like a Blocks-style FAQ accordion:
@@ -39,9 +39,7 @@ const Dropdown = ({
     return () => window.removeEventListener('resize', onResize);
   }, [isOpen]);
 
-  // useId provides a stable id that matches between server and client
-  const reactId = useId();
-  const id = `faq-${reactId.replace(/:/g, '-')}`;
+  const id = `faq-${Math.random().toString(36).slice(2, 9)}`;
 
   return (
     <div className="w-full mb-4">
@@ -51,7 +49,7 @@ const Dropdown = ({
             aria-expanded={isOpen}
             aria-controls={id}
             onClick={() => setIsOpen((s) => !s)}
-            className={`w-full text-left px-5 py-4 rounded-lg transition-shadow duration-200 border-2 ${isOpen ? 'border-blue-400 shadow-xl' : 'border-transparent shadow-none'} bg-transparent text-white`}
+            className={`cursor-target w-full text-left px-5 py-4 rounded-lg transition-shadow duration-200 border-2 ${isOpen ? 'border-blue-400 shadow-xl' : 'border-transparent shadow-none'} bg-transparent text-white`}
             style={{ fontFamily: "'Press Start 2P', cursive" }}
           >
             <div className={`flex items-center justify-between gap-4`}>

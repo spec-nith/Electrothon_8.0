@@ -3,26 +3,43 @@
 import React, { useState, useRef, useEffect } from 'react';
 import GlobeDemo from './GlobeDemo';
 import { Check, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 // A simplified, dependency-light adaptation of the provided ContactUs1
 // It uses plain inputs and CSS transitions instead of framer-motion and
 // substitutes decorative components with CSS backgrounds to match the look.
-export default function ContactUs1() {
+const ContactUs1 = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const formRef = useRef(null);
   const [inView, setInView] = useState(false);
+  const hasAnimatedRef = useRef(false); // Track if animation has already happened
+
+  // Initialize EmailJS once on component mount
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
+      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+      console.log('EmailJS initialized successfully');
+    } else {
+      console.warn('EmailJS public key not found in environment variables');
+    }
+  }, []);
 
   useEffect(() => {
     if (!formRef.current) return;
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) setInView(true);
+          // Only trigger animation once
+          if (e.isIntersecting && !hasAnimatedRef.current) {
+            setInView(true);
+            hasAnimatedRef.current = true;
+          }
         });
       },
       { threshold: 0.3 }
@@ -34,16 +51,58 @@ export default function ContactUs1() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
+    
     try {
-      // simulate submit
-      await new Promise((r) => setTimeout(r, 900));
+      // Validate inputs
+      if (!name || !email || !message) {
+        setError('Please fill in all fields');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Check if EmailJS is properly configured
+      if (!process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID) {
+        setError('EmailJS service ID not configured');
+        console.error('Missing NEXT_PUBLIC_EMAILJS_SERVICE_ID');
+        setIsSubmitting(false);
+        return;
+      }
+      
+      if (!process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID) {
+        setError('EmailJS template ID not configured');
+        console.error('Missing NEXT_PUBLIC_EMAILJS_TEMPLATE_ID');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_email: 'community.spec@gmail.com', // Your recipient email
+      };
+
+      console.log('Sending email with params:', templateParams);
+
+      const response = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
+
+      console.log('Email sent successfully:', response);
+
+      // Clear form
       setName('');
       setEmail('');
       setMessage('');
       setIsSubmitted(true);
       setTimeout(() => setIsSubmitted(false), 4000);
     } catch (err) {
-      console.error(err);
+      console.error('EmailJS error:', err);
+      setError(`Failed to send message: ${err.text || err.message || 'Unknown error'}`);
     } finally {
       setIsSubmitting(false);
     }
@@ -74,38 +133,66 @@ export default function ContactUs1() {
             </div>
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+              {error && (
+                <div className="p-3 rounded-md bg-red-500/10 border border-red-500/50 text-red-400 text-sm">
+                  {error}
+                </div>
+              )}
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm text-gray-300 mb-1">Name</label>
-                  <input value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-md bg-transparent border border-dashed border-gray-500 px-3 py-2 text-white focus:outline-none" placeholder="Enter your name" />
+                  <input 
+                    required
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)} 
+                    className="w-full rounded-md bg-transparent border border-dashed border-gray-500 px-3 py-2 text-white focus:outline-none" 
+                    placeholder="Enter your name" 
+                  />
                 </div>
                 <div>
                   <label className="block text-sm text-gray-300 mb-1">Email</label>
-                  <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="w-full rounded-md bg-transparent border border-dashed border-gray-500 px-3 py-2 text-white focus:outline-none" placeholder="Enter your email" />
+                  <input 
+                    required
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    type="email" 
+                    className="w-full rounded-md bg-transparent border border-dashed border-gray-500 px-3 py-2 text-white focus:outline-none" 
+                    placeholder="Enter your email" 
+                  />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm text-gray-300 mb-1">Message</label>
-                <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={5} className="w-full rounded-md bg-transparent border border-dashed border-gray-500 px-3 py-2 text-white focus:outline-none resize-none" placeholder="Enter your message" />
+                <textarea 
+                  required
+                  value={message} 
+                  onChange={(e) => setMessage(e.target.value)} 
+                  rows={5} 
+                  className="w-full rounded-md bg-transparent border border-dashed border-gray-500 px-3 py-2 text-white focus:outline-none resize-none" 
+                  placeholder="Enter your message" 
+                />
               </div>
 
-              <div>
+              <div className="flex justify-center">
                 <button
                   disabled={isSubmitting}
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-white font-semibold"
+                  className="cursor-target inline-flex items-center justify-center gap-2 rounded-md text-white font-semibold border border-dashed border-gray-500 px-4 py-2"
                 >
                   {isSubmitting ? (
-                    <span className="inline-flex items-center px-4 py-2 border border-dashed border-gray-500 rounded-md">
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />Sending...
-                    </span>
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
                   ) : isSubmitted ? (
-                    <span className="inline-flex items-center px-4 py-2 border border-dashed border-gray-500 rounded-md">
-                      <Check className="mr-2 h-4 w-4" />Message Sent!
-                    </span>
+                    <>
+                      <Check className="mr-2 h-4 w-4" />
+                      Message Sent!
+                    </>
                   ) : (
-                    <span className="px-4 py-2 border border-dashed border-gray-500 rounded-md">Send Message</span>
+                    <>Send Message</>
                   )}
                 </button>
               </div>
@@ -124,4 +211,6 @@ export default function ContactUs1() {
       </div>
     </section>
   );
-}
+};
+
+export default React.memo(ContactUs1);
