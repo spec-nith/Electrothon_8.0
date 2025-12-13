@@ -52,13 +52,13 @@ export default function ThemeSection() {
       id="themes"
       className="relative py-28 w-screen min-h-[1000px] pt-[18vh] text-white bg-cover bg-center overflow-hidden"
       style={{
-        backgroundImage: 'url("/backgrounds/bg2.png")',
+        backgroundImage: 'url("/backgrounds/themes.png")',
         backgroundSize: "cover",
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute inset-0 bg-black/10 z-0" />
+      <div className="absolute inset-0 bg-black/20 z-0" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6">
         {/* Heading */}

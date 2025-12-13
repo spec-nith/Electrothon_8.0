@@ -29,7 +29,7 @@ export default function Testimonials() {
       ref={sectionRef}
       className="relative w-screen min-h-[320vh] pt-[18vh]"
       style={{
-        backgroundImage: "url('/backgrounds/bg2.png')",
+        backgroundImage: "url('/backgrounds/testimonials.png')",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top center",
         backgroundSize: "100% 100%",
