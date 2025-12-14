@@ -20,13 +20,14 @@
   
   /* MAIN TITLE */
   .missionTitle {
+    color: #fdf9ff;
     font-family: "Press Start 2P", cursive;
-    font-size: 37px;
+   
     letter-spacing: 0.3em;
     text-transform: uppercase;
     text-align: center;
-    margin-top: 0px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     white-space: nowrap;
     text-shadow: 
     0 0 12px rgba(255, 255, 255, 0.9),
@@ -57,8 +58,9 @@
   }
   
   .subheading {
+    color: #fdf9ff;
     font-family: "Press Start 2P", cursive;
-    font-size: 25px;
+    
     letter-spacing: 0.2em;
     white-space: nowrap;
     text-transform: uppercase;
@@ -66,18 +68,19 @@
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
     margin-left: 0px;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
   }
   .subheading2 {
+    color: #fdf9ff;
     font-family: "Press Start 2P", cursive;
-    font-size: 25px;
+    
     letter-spacing: 0.2em;
     white-space: nowrap;
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
     margin-left: 0px;
-    margin-left: 20px;
+    margin-top: 0px;
     margin-bottom: 5px;
   }
   
@@ -175,40 +178,8 @@
     max-height: none;
     image-rendering: pixelated;
     transform: translateY(30px);
-    transform: translateX(50px);
+    /* transform: translateX(50px); */
     filter: drop-shadow(0 0 20px rgba(161, 131, 255, 0.9));
   }
   
   
-  /* RESPONSIVE */
-  @media (max-width: 1000px) {
-    .missionOverlay {
-      padding: 100px 5vw 80px;
-    }
-  
-    .missionContent {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .leftColumn {
-      align-items: center;
-      text-align: center;
-    }
-  
-    .aboutText {
-      text-align: left;
-    }
-  
-    .achievementsRow {
-      justify-content: center;
-    }
-  
-    .rightColumn {
-      margin-top: 32px;
-    }
-    .arcadeImage {
-        width: 380px;
-      }
-      
-  }
