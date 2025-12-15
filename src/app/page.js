@@ -6,19 +6,18 @@ import FAQList from "@/components/FAQList";
 import Footer from "@/components/Footer";
 import specLogo from "@/assets/images/spec-logo.png";
 import TargetCursor from '@/components/TargetCursor';
-
-
 import MainPage from "@/components/MainPage";
-
 import Gallery from "@/components/Gallery";
-
-
 import MissionBriefing from "@/components/MissionBriefing";
+//import MissionBriefing from "@/components/MissionBriefing";
+
 import Themes from "@/components/ThemesSection/ThemesSection";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Timeline from "@/components/Timeline/timeline";
 import GalleryPage from "@/components/gallery/gallery";
-
+import AboutUsSection from "@/components/MissionBriefing/AboutUsSection";
+import AchievementsSection from "@/components/MissionBriefing/AchievementsSection";
+import ThreeArcadeSceneClient from "@/components/three/ThreeArcadeSceneClient";
 export default function Page() {
   return (
     <>
@@ -62,6 +61,13 @@ export default function Page() {
       <TargetCursor />
       <MainPage />
       <MissionBriefing />
+      {/* <MissionBriefing /> */}
+      <ThreeArcadeSceneClient /> 
+      <section id="three-arcade-wrapper">
+        <AboutUsSection />
+        <AchievementsSection />
+      </section>
+      <GalleryPage />
       <Themes />
       <Timeline /> 
       <GalleryPage />       

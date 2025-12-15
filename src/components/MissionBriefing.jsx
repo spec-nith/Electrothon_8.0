@@ -1,4 +1,4 @@
-// src/components/MissionBriefing.jsx
+//this is not being used now
 
 import Image from "next/image";
 import styles from "../styles/mission.module.css";

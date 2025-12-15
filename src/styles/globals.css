@@ -55,3 +55,12 @@ body {
   position: relative;
   z-index: 2;
 }
+#three-arcade-wrapper {
+  position: relative;
+  height: 200vh; /* exactly two sections */
+}
+
+#about-us,
+#achievements {
+  min-height: 100vh;
+}

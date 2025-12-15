@@ -1,0 +1,309 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+export default function ThreeArcadeScene() {
+  const mountRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const aboutSection = document.getElementById("about-us");
+    const achievementsSection = document.getElementById("achievements");
+
+    const mount = mountRef.current;
+    if (!mount) return;
+
+    /* =======================
+       SCENE SETUP
+    ======================= */
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.PerspectiveCamera(
+        40,
+        mount.clientWidth / mount.clientHeight,
+        0.1,
+        1000
+      );
+      
+      // Eye-level camera, straight-on
+      camera.position.set(0, 1.8, 7);
+      camera.lookAt(0, 1.2, 0); 
+    // camera.position.y += 12.3
+    // camera.position.z += 1.5
+   
+
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+    });
+    renderer.setSize(mount.clientWidth, mount.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    mount.appendChild(renderer.domElement);
+
+    /* =======================
+       LIGHTS
+    ======================= */
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+    directionalLight.position.set(5, 5, 5);
+    scene.add(directionalLight);
+
+    /* =======================
+       MODEL + INTERACTION VARS
+    ======================= */
+    let model = null;
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetRotX = 0;
+    let targetRotY = 0;
+
+    /* =======================
+       LOAD GLB MODEL
+    ======================= */
+    const loader = new GLTFLoader();
+    loader.load(
+      "/models/arcade-machine.glb",
+
+      (gltf) => {
+        console.log("GLB loaded", gltf),
+        model = gltf.scene;
+        model.scale.set(0.05, 0.05, 0.05);
+        model.position.set(3.5, -1, 0);  
+        model.rotation.set(0, Math.PI, 0); 
+        model.visible = false; 
+
+        const box = new THREE.Box3().setFromObject(model);// get bounding box
+        const size = box.getSize(new THREE.Vector3());// get size of bounding box
+        model.position.y = -size.y / 2;// center vertically
+        scene.add(model);
+
+        // ---- POSITIONS (tweak values visually) ----
+const ABOUT_POS = { x: 3.2, y: -1, z: 0 };       // right of About
+const ACHIEVE_POS = { x: -3.2, y: -1.6, z: 0 }; // final resting
+
+model.position.set(...Object.values(ABOUT_POS));
+model.visible = false;
+
+// ---- SCROLL ANIMATION ----
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#about-us",
+    start: "top center",
+    endTrigger: "#achievements",
+    end: "center center",
+    scrub: true,
+    onEnter: () => (model.visible = true),
+    onLeaveBack: () => (model.visible = false),
+  },
+});
+
+tl.to(model.position, {
+  x: ACHIEVE_POS.x,
+  y: ACHIEVE_POS.y,
+  z: ACHIEVE_POS.z,
+  ease: "none",
+});
+    //    setupScrollAnimations();// setup scroll animations after model is added
+       },
+      
+      undefined,
+      (error) => {
+        console.error("Error loading arcade model:", error);
+      }
+    );
+
+    // //setup scroll animations
+    // const setupScrollAnimations = () => {
+    //     /* ---------- ABOUT US ---------- */
+    //     ScrollTrigger.create({
+    //       trigger: "#about-us",
+    //       start: "top center",
+    //       end: "bottom center",
+      
+    //       onEnter: () => {
+    //         model.visible = true;
+      
+    //         gsap.to(model.position, {
+    //           x: 3.5,
+    //           y: model.position.y,
+    //           z: 0,
+    //           duration: 1.2,
+    //           ease: "power3.out",
+    //         });
+    //       },
+      
+    //       onLeaveBack: () => {
+    //         model.visible = false; // hide on hero
+    //       },
+    //     });
+      
+    //     /* ---------- ACHIEVEMENTS ---------- */
+    //     ScrollTrigger.create({
+    //       trigger: "#achievements",
+    //       start: "top center",
+    //       end: "bottom center",
+      
+    //       onEnter: () => {
+    //         model.visible = true;
+      
+    //         gsap.to(model.position, {
+    //           x: -3.5,
+    //           y: model.position.y,
+    //           z: 0,
+    //           duration: 1.4,
+    //           ease: "power3.inOut",
+    //         });
+    //       },
+      
+    //       onLeave: () => {
+    //         // 🔒 AFTER achievements → hide permanently
+    //         model.visible = false;
+    //       },
+      
+    //       onLeaveBack: () => {
+    //         // scrolling back up → go right again
+    //         gsap.to(model.position, {
+    //           x: 3.5,
+    //           duration: 1,
+    //           ease: "power3.out",
+    //         });
+    //       },
+    //     });
+    //   };
+      
+      
+    // //positions for animation
+    // const positions = {
+    //     aboutRight: { x: 2.8, y: -1, z: 0 },
+    //     achievementsLeft: { x: -2.8, y: -1, z: 0 },
+    //   };
+      
+    /* =======================
+       MOUSE INTERACTION
+    ======================= */
+    const onMouseMove = (e) => {
+      mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+      mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+
+      targetRotY = mouseX * 0.15;
+      targetRotX = mouseY * 0.1;
+    };
+
+    window.addEventListener("mousemove", onMouseMove);
+
+    //scroll animation
+    // const moveModelOnScroll = () => {
+    //     if (!model || !aboutSection || !achievementsSection) return;
+      
+    //     const aboutRect = aboutSection.getBoundingClientRect();
+    //     const achievementsRect = achievementsSection.getBoundingClientRect();
+    //     const vh = window.innerHeight;
+      
+    //     // ❌ Before About Us → hide model
+    //     if (aboutRect.top > vh) {
+    //       model.visible = false;
+    //       return;
+    //     }
+      
+    //     // ✅ Between About Us & Achievements
+    //     if (aboutRect.top <= vh && achievementsRect.top >= vh * 0.3) {
+    //       model.visible = true;
+      
+    //       gsap.to(model.position, {
+    //         ...positions.aboutRight,
+    //         duration: 0.8,
+    //         ease: "power2.out",
+    //       });
+      
+    //       return;
+    //     }
+      
+    //     // ✅ Achievements active → move left
+    //     if (achievementsRect.top < vh * 0.8 && achievementsRect.bottom > 0) {
+    //       model.visible = true;
+      
+    //       gsap.to(model.position, {
+    //         ...positions.achievementsLeft,
+    //         duration: 1.2,
+    //         ease: "power2.out",
+    //       });
+      
+    //       return;
+    //     }
+      
+    //     // ❌ After Achievements → hide model
+    //     if (achievementsRect.bottom < 0) {
+    //       model.visible = false;
+    //     }
+    //   };
+      
+      
+    //   window.addEventListener("scroll", moveModelOnScroll);
+    //   moveModelOnScroll();
+
+    /* =======================
+       ANIMATION LOOP
+    ======================= */
+    const animate = () => {
+      requestAnimationFrame(animate);
+
+      if (model) {
+        model.rotation.y += (targetRotY - model.rotation.y) * 0.05;
+        model.rotation.x += (targetRotX - model.rotation.x) * 0.05;
+      }
+
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    /* =======================
+       RESIZE HANDLER
+    ======================= */
+    const onResize = () => {
+      camera.aspect = mount.clientWidth / mount.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(mount.clientWidth, mount.clientHeight);
+    };
+
+    window.addEventListener("resize", onResize);
+
+    /* =======================
+       CLEANUP
+    ======================= */
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", onResize);
+    //   window.removeEventListener("scroll", moveModelOnScroll);
+      
+      ScrollTrigger.getAll().forEach(t => t.kill());
+
+      if (mount.contains(renderer.domElement)) {
+        mount.removeChild(renderer.domElement);
+      }
+
+      renderer.dispose();
+      scene.clear();
+    };
+  }, []);
+
+  return (
+    <div
+      ref={mountRef}
+      style={{
+        position: "fixed",
+        inset: 0,
+        width: "100vw",
+        height: "100vh",
+        pointerEvents: "none",
+        zIndex: 20,
+      }}
+    />
+  );
+}
