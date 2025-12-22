@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -83,25 +83,24 @@ model.visible = false;
 ScrollTrigger.create({
   trigger: "#three-arcade-wrapper",
   start: "top top",
-  end: "bottom bottom",
+  end: "bottom top",
   scrub: true,
-  pin: true, // 🔒 ABSOLUTELY REQUIRED
+  pin: true,
 
   onUpdate: (self) => {
     if (!model) return;
 
-    const p = self.progress; // 0 → 1 ONLY between About & Achievements
+    const p = self.progress;
 
     model.visible = true;
 
-    // ONLY X MOVES — Y IS LOCKED
     model.position.x = ABOUT_X + (ACHIEVE_X - ABOUT_X) * p;
     model.position.y = FIXED_Y;
   },
 
   onLeave: () => {
-    // HARD LOCK at achievements
     model.position.set(ACHIEVE_X, FIXED_Y, 0);
+    model.visible = false;
   },
 
   onLeaveBack: () => {
