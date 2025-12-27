@@ -108,12 +108,7 @@ export default function HackerGuide() {
                   <li className="flex items-start gap-3 text-gray-400 text-[10px] md:text-xs">
                     <span className="text-purple-400">➤</span> College Identity Card
                   </li>
-                  <li className="flex items-start gap-3 text-gray-400 text-[10px] md:text-xs">
-                    <span className="text-purple-400">➤</span> Covid Vaccination Certificate
-                  </li>
-                  <li className="flex items-start gap-3 text-gray-400 text-[10px] md:text-xs">
-                    <span className="text-purple-400">➤</span> Face mask
-                  </li>
+                  
                 </ul>
               </ChecklistItem>
 
@@ -126,7 +121,7 @@ export default function HackerGuide() {
               </ChecklistItem>
 
               <ChecklistItem number="5️⃣">
-                Read and abide by the <Link href="/code-of-conduct" className="text-purple-400 hover:text-purple-300 underline">Code of Conduct</Link>.
+                Read and abide by the <Link  href="/code-of-conduct" className="text-purple-400 hover:text-purple-300 underline">Code of Conduct</Link>.
               </ChecklistItem>
 
             </div>
