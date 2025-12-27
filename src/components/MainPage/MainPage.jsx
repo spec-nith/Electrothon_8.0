@@ -41,15 +41,17 @@ export default function MainPage() {
         {/* Center Text */}
         <div className="relative z-30 flex-1 flex flex-col items-center justify-center text-center px-4 max-w-full">
           {/* Title */}
+          <div className="cursor-target">
           <h1
             className="text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]
                        flex flex-col sm:flex-row flex-wrap
                        justify-center items-center gap-x-6
                        text-[30px] sm:text-[36px] md:text-[50px] lg:text-[64px] xl:text-[70px]
-                       leading-tight mt-4"
+                       leading-tight mt-0 " 
           >
             {/* ELECTROTHON */}
-            <span className="px-[2pt] whitespace-nowrap">ELECTROTHON</span>
+        
+            <span className="px-[2pt] cursor-targetwhitespace-nowrap">ELECTROTHON</span>
 
             <span className="block sm:inline"></span>
             <span className="block sm:inline"></span>
@@ -57,13 +59,13 @@ export default function MainPage() {
             {/* 8.0 */}
             <span className="block sm:inline">8.0</span>
           </h1>
-
+          </div>
           {/* Subtitle */}
           <h2
             className="font-['Orbitron'] font-extrabold text-[rgb(243,232,255)]
                        drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]
                        mt-4 tracking-wide
-                       text-[18px] sm:text-[16px] md:text-[24px] lg:text-[32px] xl:text-[40px]"
+                       text-[18px] sm:text-[16px] md:text-[24px] lg:text-[32px] xl:text-[40px] cursor-target"
           >
             LABYRINTH OF ETERNUM
           </h2>

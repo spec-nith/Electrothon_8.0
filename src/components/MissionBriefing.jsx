@@ -1,6 +1,7 @@
 // src/components/MissionBriefing.jsx
 
 import Image from "next/image";
+import ArcadeModel from "@/components/ArcadeModel";
 import styles from "../styles/mission.module.css";
 
 const achievements = [
@@ -19,10 +20,10 @@ export default function MissionBriefing() {
         backgroundImage: 'url("/sections/mission-briefing-bg.png")',
       }}
     >
-      <div className="w-full min-h-screen flex flex-col items-center px-6 sm:px-10 lg:px-20 py-24">
+      <div className="w-full flex flex-col items-center px-6 sm:px-10 lg:px-20 py-10">
         {/* MAIN TITLE */}
         <h2
-          className={`${styles.missionTitle} text-center text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold`}
+          className={`${styles.missionTitle} cursor-target text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold`}
         >
           MISSION BRIEFING
         </h2>
@@ -34,13 +35,13 @@ export default function MissionBriefing() {
             {/* ABOUT US */}
             <div className="w-full flex flex-col items-center">
               <h3
-                className={`${styles.subheading} 
-  text-[16px] sm:text-[20px] md:text-[22px] lg:text-[25px]`}
+                className={`${styles.subheading} cursor-target
+  text-[16px] sm:text-[22px] md:text-[24px] lg:text-[29px]`}
               >
                 ABOUT US
               </h3>
 
-              <div className={`${styles.aboutText} text-center lg:text-left`}>
+              <div className={`${styles.aboutText} cursor-target text-center lg:text-left`}>
                 <p>
                   In the neon glow of Eternum’s endless corridors, a new era of
                   Electrothon powers up. The screens flicker, the circuits hum,
@@ -64,38 +65,37 @@ export default function MissionBriefing() {
             {/* OUR ACHIEVEMENTS */}
             <div className="w-full flex flex-col items-center">
               <h3
-                className={`${styles.subheading2} 
-  text-[16px] sm:text-[20px] md:text-[22px] lg:text-[25px]`}
+                className={`${styles.subheading2} cursor-target
+  text-[16px] sm:text-[22px] md:text-[24px] lg:text-[29px]`}
               >
                 OUR ACHIEVEMENTS
               </h3>
             </div>
 
             {/* Cards */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-5">
-              {achievements.map((item) => (
-                <div
-                  key={item.number}
-                  className={`${styles.achievementCard} cursor-pointer`}
-                >
-                  <div className="flex flex-col items-center text-center">
-                    <div className={styles.achievementNumber}>
-                      {item.number}
-                    </div>
-                    <div className={styles.achievementLabel}>
-                      {item.labelTop}
-                      {item.labelBottom && <br />}
-                      {item.labelBottom}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <div className={styles.achievementsRow}>
+  {achievements.map((item) => (
+    <div
+      key={item.number}
+      className={`${styles.achievementCard} cursor-target`}
+    >
+      <div className="flex flex-col items-center text-center">
+        <div className={styles.achievementNumber}>{item.number}</div>
+        <div className={styles.achievementLabel}>
+          {item.labelTop}
+          {item.labelBottom && <br />}
+          {item.labelBottom}
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
           </div>
 
           {/* RIGHT COLUMN */}
-          <div className="flex justify-center lg:justify-end w-full lg:w-auto">
-            <Image
+          <div className="flex justify-center lg:justify-end w-full lg:w-auto ">
+            {/* <Image
               src="/sections/arcade-machine.png"
               alt="Arcade machine"
               width={420}
@@ -107,7 +107,19 @@ export default function MissionBriefing() {
     `}
               unoptimized
               priority
-            />
+            /> */}
+            <div
+    className={`${styles.arcadeImage} 
+      w-56 sm:w-72 md:w-80 lg:w-[420px]
+      h-[800px]
+      mx-auto
+      lg:ml-auto
+      translate-x-0
+      -translate-y-8
+    `}
+  >
+    <ArcadeModel />
+  </div>
           </div>
         </div>
       </div>
