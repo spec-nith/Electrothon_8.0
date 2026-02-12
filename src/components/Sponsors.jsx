@@ -20,7 +20,7 @@ import iqai_logo from "@/assets/images/iqai_logo.png";
 import eventopia_logo from "@/assets/images/eventopia_logo.png";
 import n8n_logo from "@/assets/images/n8n_logo.svg";
 import Stockedge_logo from "@/assets/images/Stockedge.webp";
-
+import Requestly_logo from "@/assests/images/requestly.png"
 // ─── TIERS (LOCKED) ──────────────────────────────────
 
 // 🥇 ARCANCELLAR
@@ -60,6 +60,13 @@ const BRONZE = [
     logo: nullshot_logo,
     url: "https://nullshot.ai",
     alt: "Nullshot Logo",
+    scale: 1.05,
+  },
+  {
+    name: "Requestly",
+    logo: Requestly_logo,
+    url: "https://requestly.com/",
+    alt: "Requestly_logo",
     scale: 1.05,
   },
 ];
