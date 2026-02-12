@@ -20,6 +20,7 @@ import iqai_logo from "@/assets/images/iqai_logo.png";
 import eventopia_logo from "@/assets/images/eventopia_logo.png";
 import n8n_logo from "@/assets/images/n8n_logo.svg";
 import Stockedge_logo from "@/assets/images/Stockedge.webp";
+import requestly_logo from "@/assets/images/requestly.png"
 
 // ─── TIERS (LOCKED) ──────────────────────────────────
 
@@ -61,6 +62,13 @@ const BRONZE = [
     url: "https://nullshot.ai",
     alt: "Nullshot Logo",
     scale: 1.05,
+  },
+  {
+    name: "Requestly",
+    logo: requestly_logo,
+    url: "https://requestly.com",
+    alt: "Requestly Logo",
+    scale : 1.05,
   },
 ];
 
