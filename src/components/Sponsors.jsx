@@ -67,7 +67,7 @@ const BRONZE = [
     logo: Requestly_logo,
     url: "https://requestly.com/",
     alt: "Requestly_logo",
-    scale: 1.05,
+    scale: 1.60,
   },
 ];
 
