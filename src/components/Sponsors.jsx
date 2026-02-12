@@ -20,7 +20,7 @@ import iqai_logo from "@/assets/images/iqai_logo.png";
 import eventopia_logo from "@/assets/images/eventopia_logo.png";
 import n8n_logo from "@/assets/images/n8n_logo.svg";
 import Stockedge_logo from "@/assets/images/Stockedge.webp";
-
+import RQ_Logo from "@/assets/images/RQ-Logo.webp";
 // ─── TIERS (LOCKED) ──────────────────────────────────
 
 // 🥇 ARCANCELLAR
@@ -54,12 +54,19 @@ const SILVER = [
 
 // 🥉 WARDENIX
 const BRONZE = [
-  
+
   {
     name: "Nullshot",
     logo: nullshot_logo,
     url: "https://nullshot.ai",
     alt: "Nullshot Logo",
+    scale: 1.05,
+  },
+  {
+    name: "RQ-Logo",
+    logo: RQ_Logo,
+    url: "https://rq-logo.com",
+    alt: "RQ-Logo Logo",
     scale: 1.05,
   },
 ];
