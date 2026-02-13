@@ -65,7 +65,7 @@ const BRONZE = [
   {
     name: "RQ-Logo",
     logo: RQ_Logo,
-    url: "https://rq-logo.com",
+    url: "https://requestly.com/",
     alt: "RQ-Logo Logo",
     scale: 1.05,
   },
