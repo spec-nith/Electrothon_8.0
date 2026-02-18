@@ -237,14 +237,14 @@ const PillNav = ({
     return (
         <div
             className="
-    fixed top-[16px] sm:top-[24px] md:top-[34px]
-left-1/2 -translate-x-1/2 z-[1000] w-full md:w-auto
-        [--nav-h:36px] sm:[--nav-h:38px] md:[--nav-h:42px]
-        [--pill-pad-x:12px] sm:[--pill-pad-x:14px] md:[--pill-pad-x:12px] lg:[--pill-pad-x:18px]
+fixed top-[12px] sm:top-[16px] md:top-[24px] lg:top-[34px]
+left-1/2 -translate-x-1/2 z-[1000] w-full max-w-[calc(100vw-24px)] md:w-auto
+        [--nav-h:32px] sm:[--nav-h:36px] md:[--nav-h:42px]
+        [--pill-pad-x:10px] sm:[--pill-pad-x:12px] md:[--pill-pad-x:14px] lg:[--pill-pad-x:18px]
       "
         >
             <nav
-                className={`w-full md:w-max flex items-center justify-between md:justify-start box-border px-4 md:px-0 ${className}`}
+                className={`w-full md:w-max flex items-center justify-between md:justify-start box-border px-3 sm:px-4 md:px-0 ${className}`}
                 aria-label="Primary"
                 style={cssVars}
             >
@@ -399,48 +399,51 @@ left-1/2 -translate-x-1/2 z-[1000] w-full md:w-auto
                     onClick={toggleMobileMenu}
                     aria-label="Toggle menu"
                     aria-expanded={isMobileMenuOpen}
-                    className=" 
-    md:hidden rounded-full border-0
-    flex flex-col items-center justify-center gap-1
-    cursor-pointer p-0 relative
-    backdrop-blur-md
+                    className="
+md:hidden rounded-full border-0
+flex flex-col items-center justify-center gap-0.5
+cursor-pointer p-0 relative
+backdrop-blur-md transition-all duration-200
   "
                     style={{
                         width: "var(--nav-h)",
                         height: "var(--nav-h)",
-                        background: "rgba(153, 92, 250, 0.25)",
+                        background: "rgba(153, 92, 250, 0.35)",
                         backdropFilter: "blur(12px)",
                         WebkitBackdropFilter: "blur(12px)",
-                        border: "1px solid rgba(255,255,255,0.15)",
+                        border: "1px solid rgba(255,255,255,0.2)",
+                        boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
                     }}
                 >
                     <span
-                        className="hamburger-line w-4 h-0.5 rounded"
-                        style={{ background: "var(--pill-bg, #fff)" }}
+                        className="hamburger-line w-3.5 h-0.5 rounded transition-all duration-300"
+                        style={{ background: "#ffffff" }}
                     />
                     <span
-                        className="hamburger-line w-4 h-0.5 rounded"
-                        style={{ background: "var(--pill-bg, #fff)" }}
+                        className="hamburger-line w-3.5 h-0.5 rounded transition-all duration-300"
+                        style={{ background: "#ffffff" }}
                     />
                 </button>
             </nav>
 
             <div
                 ref={mobileMenuRef}
-                className="md:hidden absolute top-[3em] left-4 right-4 rounded-[27px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[998] origin-top backdrop-blur-md"
+                className="md:hidden absolute top-[calc(var(--nav-h)+8px)] left-3 right-3 sm:left-4 sm:right-4 rounded-2xl shadow-lg z-[998] origin-top backdrop-blur-md"
                 style={{
                     ...cssVars,
-                    background: "rgba(153, 92, 250, 0.25)",
-                    backdropFilter: "blur(12px)",
-                    WebkitBackdropFilter: "blur(12px)",
-                    border: "1px solid rgba(255,255,255,0.15)",
+                    background: "rgba(153, 92, 250, 0.35)",
+                    backdropFilter: "blur(16px)",
+                    WebkitBackdropFilter: "blur(16px)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
                 }}
             >
-                <ul className="list-none m-0 p-[3px] flex flex-col gap-[3px]">
+                <ul className="list-none m-0 p-2 flex flex-col gap-1">
                     {items.map((item) => {
                         const defaultStyle = {
-                            background: "var(--pill-bg, #fff)",
-                            color: "var(--pill-text, #fff)",
+                            background: "rgba(75, 29, 125, 0.8)",
+                            color: "#ffffff",
+                            transition: "all 0.2s ease",
                         };
 
                         return (
@@ -448,7 +451,7 @@ left-1/2 -translate-x-1/2 z-[1000] w-full md:w-auto
                                 {isRouterLink(item.href) ? (
                                     <Link
                                         href={item.href}
-                                        className="block py-2.5 px-4 text-[13px] font-medium rounded-[50px]"
+                                        className="block py-2.5 px-4 text-xs sm:text-sm font-medium rounded-xl hover:bg-opacity-100 transition-all duration-200"
                                         style={defaultStyle}
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
@@ -457,7 +460,7 @@ left-1/2 -translate-x-1/2 z-[1000] w-full md:w-auto
                                 ) : (
                                     <a
                                         href={item.href}
-                                        className="block py-2.5 px-4 text-[13px] font-medium rounded-[50px]"
+                                        className="block py-2.5 px-4 text-xs sm:text-sm font-medium rounded-xl hover:bg-opacity-100 transition-all duration-200"
                                         style={defaultStyle}
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
