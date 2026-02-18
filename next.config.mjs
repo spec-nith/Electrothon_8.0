@@ -6,7 +6,10 @@ const nextConfig = {
     unoptimized: true,
   },
   experimental: {
-    optimizePackageImports: ['framer-motion'],
+    optimizePackageImports: ['framer-motion', 'lucide-react', '@tabler/icons-react', 'gsap'],
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
   turbopack: {},
 };
