@@ -124,7 +124,7 @@ export default function HackerGuide() {
               </ChecklistItem>
 
               <ChecklistItem number="5️⃣">
-                Read and abide by the <Link  href="/code-of-conduct" className="text-purple-400 hover:text-purple-300 underline">Code of Conduct</Link>.
+                Read and abide by the <Link  href="/codeofconduct" className="text-purple-400 hover:text-purple-300 underline">Code of Conduct</Link>.
               </ChecklistItem>
 
             </div>
@@ -133,7 +133,7 @@ export default function HackerGuide() {
           {/* Footer Note */}
           <div className="mt-8 p-6 bg-white/5 rounded-lg border border-purple-500/20 text-center">
              <p className="text-xs md:text-sm text-gray-300 mb-2">In case you missed it:</p>
-             <Link href="#" className="text-[#fbbf24] hover:text-yellow-300 text-xs md:text-sm underline decoration-dashed underline-offset-4">
+             <Link href="/venueguide" className="text-[#fbbf24] hover:text-yellow-300 text-xs md:text-sm underline decoration-dashed underline-offset-4">
                 Venue Guide to Electrothon 8.0
              </Link>
           </div>

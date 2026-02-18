@@ -2,6 +2,7 @@
 
 import { Skiper30 } from "@/components/gallery/skiper30";
 import { ReactLenis } from "lenis/react";
+import Image from "next/image";
 
 export default function GalleryPage() {
   return (
@@ -57,39 +58,37 @@ export default function GalleryPage() {
       `}</style>
 
       <main className="w-full min-h-screen bg-[#2e1065]">
-        
+
         {/* SECTION 1: HEADER (Background: gallerybg.png) */}
-        <div 
+        <div
           className="relative h-[220px] flex items-center justify-center text-center gallery-header"
         >
+          <Image
+            src="/backgrounds/gallerybg.webp"
+            alt="Gallery Header Background"
+            fill
+            className="object-cover -z-10"
+            priority
+          />
           <div className="gallery-decor" aria-hidden />
           {/* Blend: gradient to mix header with gallery section beneath */}
           <div className="header-blend" aria-hidden />
-         <h2
-  className="text-[clamp(1.6rem,5vw,3.75rem)] text-white drop-shadow-[0_4px_0_rgba(0,0,0,1)]"
-  style={{ fontFamily: "'Press Start 2P', cursive" }}
->
-  EVENTS GALLERY
-</h2>
+          <h2
+            className="text-[clamp(1.6rem,5vw,3.75rem)] text-white drop-shadow-[0_4px_0_rgba(0,0,0,1)]"
+            style={{ fontFamily: "'Press Start 2P', cursive" }}
+          >
+            EVENTS GALLERY
+          </h2>
         </div>
 
-        {/* SECTION 2: GALLERY SCROLL (Background: gallerybgmain.png) */}
-        <div 
-          className="w-full relative -mt-4"
-          style={{
-            // The image stays fixed in the window while the gallery scrolls over it
-            backgroundImage: "url('/backgrounds/gallerybgmain.png')",
-            backgroundAttachment: "fixed", 
-            backgroundPosition: "center bottom", // Anchors crystals to bottom
-            backgroundSize: "cover", // Ensures full width/height coverage
-            backgroundRepeat: "no-repeat",
-            minHeight: "100vh"
-          }}
+        {/* SECTION 2: GALLERY SCROLL */}
+        <div
+          className="w-full relative -mt-4 min-h-screen"
         >
-           {/* The Gallery Component */}
-           <div>
-             <Skiper30 />
-           </div>
+          {/* The Gallery Component */}
+          <div>
+            <Skiper30 />
+          </div>
         </div>
 
       </main>

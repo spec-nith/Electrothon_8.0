@@ -1,5 +1,5 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Lenis from "lenis";
 import { useEffect, useRef, useState } from "react";
 import data from '@/components/gallery/data';
@@ -19,6 +19,7 @@ const Skiper30 = () => {
     offset: ["start end", "end start"],
   });
 
+
   const { height } = dimension;
 
   // Parallax transforms - optimized multipliers
@@ -29,11 +30,11 @@ const Skiper30 = () => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1,
       lerp: 0.1, // Added for extra smoothness
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: 1.5,
+      touchMultiplier: 0.5,
     });
 
     const raf = (time) => {
@@ -68,7 +69,9 @@ const Skiper30 = () => {
         className="relative box-border flex h-[175vh] gap-[2vw] overflow-hidden p-[2vw]"
         style={{
           backgroundColor: "#2e1065", // Consistent dark background
-          contain: "paint" // Prevents layout shifts during parallax
+          contain: "paint", // Prevents layout shifts during parallax
+          contentVisibility: "visible", 
+           containIntrinsicSize: "0 175vh",
         }}
       >
         {/* Shadow Overlay */}
@@ -99,7 +102,8 @@ const Column = ({ images, y, top }) => {
       style={{ 
         y, 
         top,
-        willChange: "transform" // Prepares GPU for movement
+        willChange: "transform", // Prepares GPU for movement
+        transform: "translateZ(0)",
       }}
     >
       {images.map((src, i) => (
@@ -123,9 +127,12 @@ const Column = ({ images, y, top }) => {
              translate-z-0 
              backface-visibility-hidden
              cursor-target
+             
 
-             group-hover:scale-105
-             transition-transform duration-700 ease-out" 
+             group-hover:scale-105"
+             style={{
+                  transform: "translateZ(0)", // FORCES GPU layer
+                }}
           />
         </div>
       ))}

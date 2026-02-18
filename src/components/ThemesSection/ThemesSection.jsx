@@ -58,11 +58,15 @@ export default function ThemeSection() {
   return (
     <section
       id="themes"
-      className="relative py-28 w-screen min-h-screen lg:min-h-[1000px] pt-[18vh] text-white overflow-hidden bg-cover bg-top"
-      style={{
-        backgroundImage: 'url("/backgrounds/themes.png")',
-      }}
+      className="relative py-28 w-screen min-h-screen lg:min-h-[1000px] pt-[18vh] text-white overflow-hidden"
     >
+      <Image
+        src="/backgrounds/themes.webp"
+        alt="Themes Background"
+        fill
+        priority
+        className="object-cover object-top z-0"
+      />
       <TargetCursor targetSelector=".cursor-target" />
 
       {/* ========= GRADIENTS & OVERLAYS ========= */}
@@ -96,14 +100,13 @@ export default function ThemeSection() {
         }}
       />
       <div
-        className={`absolute inset-0 z-[0] ${
-          isSmallScreen ? "bg-black/5" : "bg-black/10"
-        }`}
+        className={`absolute inset-0 z-[0] ${isSmallScreen ? "bg-black/5" : "bg-black/10"
+          }`}
       />
 
       {/* ================= CONTENT ================= */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6">
-        
+
         {/* HEADING */}
         <motion.div
           variants={fadeInUp}
@@ -132,8 +135,8 @@ export default function ThemeSection() {
               isSmallScreen
                 ? `flex flex-col ${mobileGap}`
                 : isMediumScreen
-                ? `grid grid-cols-3 ${gridGap} place-items-center`
-                : `flex ${desktopGap} items-stretch justify-center`
+                  ? `grid grid-cols-3 ${gridGap} place-items-center`
+                  : `flex ${desktopGap} items-stretch justify-center`
             }
           >
             {tabData.map((theme, idx) => {
@@ -149,10 +152,10 @@ export default function ThemeSection() {
 
               const forcedStyle = !isDesktop
                 ? {
-                    width: "100%",
-                    minWidth: "100%",
-                    height: isSmallScreen ? mobileCardHeight : "460px",
-                  }
+                  width: "100%",
+                  minWidth: "100%",
+                  height: isSmallScreen ? mobileCardHeight : "460px",
+                }
                 : {};
 
               return (
@@ -160,7 +163,7 @@ export default function ThemeSection() {
                   key={theme.id}
                   layout
                   animate={{ width: targetWidth }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }} 
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
                   onMouseEnter={() =>
                     isDesktop && lockedIndex === null && setActiveIndex(idx)
                   }
@@ -170,9 +173,8 @@ export default function ThemeSection() {
                   onClick={() =>
                     setLockedIndex((prev) => (prev === idx ? null : idx))
                   }
-                  className={`cursor-target group relative h-[460px] rounded-3xl overflow-hidden cursor-pointer border transition-all duration-500 ${
-                    isActive ? "border-white/60 shadow-2xl shadow-purple-900/20" : "border-white/10"
-                  }`}
+                  className={`cursor-target group relative h-[460px] rounded-3xl overflow-hidden cursor-pointer border transition-all duration-500 ${isActive ? "border-white/60 shadow-2xl shadow-purple-900/20" : "border-white/10"
+                    }`}
                   style={forcedStyle}
                 >
                   {/* 1. BACKGROUND IMAGE */}
@@ -180,54 +182,51 @@ export default function ThemeSection() {
                     src={theme.img1}
                     alt={theme.heading}
                     fill
-                    className={`object-cover transition-transform duration-700 ${
-                      isActive ? "scale-110" : "scale-100"
-                    }`}
+                    className={`object-cover transition-transform duration-700 ${isActive ? "scale-110" : "scale-100"
+                      }`}
                   />
 
                   {/* 2. GRADIENT OVERLAY */}
-                  <div 
-                    className={`absolute inset-0 bg-gradient-to-t transition-colors duration-500 ${
-                        isActive 
-                        ? "from-black/95 via-black/60 to-transparent" 
-                        : "from-black/80 via-black/20 to-transparent"
-                    }`} 
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-t transition-colors duration-500 ${isActive
+                      ? "from-black/95 via-black/60 to-transparent"
+                      : "from-black/80 via-black/20 to-transparent"
+                      }`}
                   />
 
                   {/* 3. CONTENT AREA */}
                   <div className="absolute inset-x-0 bottom-0 h-full p-6 pointer-events-none">
-                    
+
                     {/* TITLE */}
-                    <div 
-                        className="absolute left-6 right-6 transition-all duration-500 ease-in-out"
-                        style={{
-                            // Moves title up when active
-                            bottom: isActive ? "140px" : "30px" 
-                        }}
+                    <div
+                      className="absolute left-6 right-6 transition-all duration-500 ease-in-out"
+                      style={{
+                        // Moves title up when active
+                        bottom: isActive ? "140px" : "30px"
+                      }}
                     >
-                         {/* FIX: break-words ensures long titles wrap instead of disappearing.
+                      {/* FIX: break-words ensures long titles wrap instead of disappearing.
                              leading-tight keeps wrapped lines close together. */}
-                         <h3 className={`${orbitron.className} text-lg md:text-xl font-bold text-white drop-shadow-md break-words leading-tight`}>
-                            {theme.heading}
-                         </h3>
+                      <h3 className={`${orbitron.className} text-lg md:text-xl font-bold text-white drop-shadow-md break-words leading-tight`}>
+                        {theme.heading}
+                      </h3>
                     </div>
 
                     {/* DESCRIPTION */}
-                    <div 
-                        className={`absolute left-6 right-6 bottom-6 transition-all duration-500 ease-in-out ${
-                           isActive ? "delay-300" : "delay-0"
+                    <div
+                      className={`absolute left-6 right-6 bottom-6 transition-all duration-500 ease-in-out ${isActive ? "delay-300" : "delay-0"
                         }`}
-                        style={{
-                            opacity: isActive ? 1 : 0,
-                            transform: isActive ? "translateY(0)" : "translateY(20px)", 
-                        }}
+                      style={{
+                        opacity: isActive ? 1 : 0,
+                        transform: isActive ? "translateY(0)" : "translateY(20px)",
+                      }}
                     >
-                         {/* FIX: min-w-[200px] ensures text layout is stable */}
-                         <p className="text-sm text-gray-200 leading-relaxed font-sans line-clamp-5 min-w-[200px]">
-                            {theme.content}
-                         </p>
+                      {/* FIX: min-w-[200px] ensures text layout is stable */}
+                      <p className="text-sm text-gray-200 leading-relaxed font-sans line-clamp-5 min-w-[200px]">
+                        {theme.content}
+                      </p>
                     </div>
-                    
+
                   </div>
                 </motion.div>
               );

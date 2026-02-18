@@ -14,11 +14,15 @@ export default function MissionBriefing() {
   return (
     <section
       id="mission-briefing"
-      className="relative w-full min-h-screen bg-cover bg-top bg-no-repeat"
-      style={{
-        backgroundImage: 'url("/sections/mission-briefing-bg.png")',
-      }}
+      className="relative w-full min-h-screen"
     >
+      <Image
+        src="/sections/mission-briefing-bg.webp"
+        alt="Mission Briefing Background"
+        fill
+        className="object-cover object-top -z-10"
+        priority
+      />
       <div className="w-full flex flex-col items-center px-6 sm:px-10 lg:px-20 py-10">
         {/* MAIN TITLE */}
         <h2
@@ -73,29 +77,29 @@ export default function MissionBriefing() {
 
             {/* Cards */}
             <div className={styles.achievementsRow}>
-  {achievements.map((item) => (
-    <div
-      key={item.number}
-      className={`${styles.achievementCard} cursor-target`}
-    >
-      <div className="flex flex-col items-center text-center">
-        <div className={styles.achievementNumber}>{item.number}</div>
-        <div className={styles.achievementLabel}>
-          {item.labelTop}
-          {item.labelBottom && <br />}
-          {item.labelBottom}
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
+              {achievements.map((item) => (
+                <div
+                  key={item.number}
+                  className={`${styles.achievementCard} cursor-target`}
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <div className={styles.achievementNumber}>{item.number}</div>
+                    <div className={styles.achievementLabel}>
+                      {item.labelTop}
+                      {item.labelBottom && <br />}
+                      {item.labelBottom}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
 
           </div>
 
           {/* RIGHT COLUMN */}
           <div className="flex justify-center lg:justify-end w-full lg:w-auto ">
             <Image
-              src="/sections/arcade-machine.png"
+              src="/sections/arcade-machine.webp"
               alt="Arcade machine"
               width={420}
               height={800}

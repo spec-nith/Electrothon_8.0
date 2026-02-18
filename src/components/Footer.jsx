@@ -5,28 +5,51 @@ import React from 'react';
 import { Github, Linkedin, Instagram, Mail, X } from 'lucide-react';
 import Image from 'next/image';
 import specLogo from '@/assets/images/spec-logo.png';
+import bg_img_footer from '@/assets/images/bg_img_footer.webp';
 import ContactUs1 from '@/components/ui/ContactUs1';
 import TargetCursor from './TargetCursor';
 
 export default function Footer() {
   return (
-    <footer 
-      id="contact" 
+    <footer
+      id="contact"
       className="relative w-full py-24 flex items-center justify-center text-gray-800 overflow-hidden"
     >
       <TargetCursor targetSelector=".cursor-target" />
-      
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0"
+      {/* MLH Trust Badge (fixed) */}
+      <a
+        id="mlh-trust-badge"
+        href="https://mlh.io/apac?utm_source=apac-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white"
+        target="_blank"
+        rel="noopener noreferrer"
         style={{
-          backgroundImage: 'url(/bg_img_footer.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#1a1a1a'
+          display: 'block',
+          maxWidth: '100px',
+          minWidth: '60px',
+          position: 'fixed',
+          right: '50px',
+          top: 0,
+          width: '10%',
+          zIndex: 10000
         }}
-      ></div>
+      >
+        <img
+          src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg"
+          alt="Major League Hacking 2026 Hackathon Season"
+          style={{ width: '100%' }}
+        />
+      </a>
+
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={bg_img_footer}
+          alt="Footer Background"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+      </div>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40 z-5"></div>
@@ -34,7 +57,7 @@ export default function Footer() {
       {/* Content */}
       <div className="relative z-10 w-full flex flex-col items-center px-4">
         {/* Footer Title - KEPT AS IS (Pixel Font) */}
-  <div className="flex items-center justify-center p-8 w-full text-center mb-8">
+        <div className="flex items-center justify-center p-8 w-full text-center mb-8">
           <h1
             className="font-normal text-white text-[clamp(1.6rem,5vw,3.75rem)] leading-tight break-words max-w-[90%] sm:max-w-[700px] mx-auto flex flex-col items-center text-center"
             style={{ fontFamily: "'Press Start 2P', cursive" }}
@@ -74,17 +97,17 @@ export default function Footer() {
                   />
                 </a>
               </div>
-              
-           {/* Resources */}
-{/* Resources / LINKS */}
+
+              {/* Resources */}
+              {/* Resources / LINKS */}
               <div className="text-center mb-6 md:mb-0 min-w-0 w-full md:w-auto">
-                <p 
+                <p
                   className="text-white font-bold mb-4 text-sm"
                   style={{ fontFamily: "'Press Start 2P', cursive" }}
                 >
                   RESOURCES
                 </p>
-                <ul 
+                <ul
                   className="space-y-4 text-gray-400 text-[10px] leading-relaxed whitespace-normal break-words"
                   style={{ fontFamily: "'Press Start 2P', cursive" }}
                 >
@@ -112,7 +135,17 @@ export default function Footer() {
                   {/* NEW LINK ADDED HERE */}
                   <li>
                     <a
-                      href="/hackersguide" 
+                      href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf?utm_campaign=Member+Event+-+Onboarding+Reminder&utm_content=Onboarding+Needed&utm_medium=Email&utm_source=Customer.io"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cursor-target hover:text-gray-300"
+                    >
+                      MLH Code of Conduct
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/hackersguide"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="cursor-target hover:text-gray-300"
@@ -125,14 +158,14 @@ export default function Footer() {
 
               {/* Address */}
               <div className="text-center mb-6 md:mb-0 min-w-0 w-full md:w-auto">
-                <p 
+                <p
                   className="text-white font-bold mb-4 text-sm"
                   style={{ fontFamily: "'Press Start 2P', cursive" }}
                 >
                   ADDRESS
                 </p>
                 {/* APPLIED PIXEL FONT HERE */}
-                <ul 
+                <ul
                   className="space-y-4 text-gray-400 text-[10px] leading-relaxed whitespace-normal break-words"
                   style={{ fontFamily: "'Press Start 2P', cursive" }}
                 >
@@ -153,7 +186,7 @@ export default function Footer() {
 
               {/* Stay Connected */}
               <div className="text-center min-w-0 w-full md:w-auto">
-                <p 
+                <p
                   className="text-white font-bold mb-4 text-sm"
                   style={{ fontFamily: "'Press Start 2P', cursive" }}
                 >
@@ -209,7 +242,7 @@ export default function Footer() {
                     className="cursor-target relative text-white font-bold bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg transition-all duration-300 px-4 py-2 sm:px-6 sm:py-3 rounded-lg border-2 border-blue-500 whitespace-nowrap"
                     style={{ fontFamily: "'Press Start 2P', cursive", fontSize: '0.65rem' }}
                   >
-                      Electrothon 7.0
+                    Electrothon 7.0
                   </button>
                 </div>
               </div>
@@ -217,7 +250,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright - APPLIED PIXEL FONT HERE */}
-          <div 
+          <div
             className="text-center text-gray-400 text-[10px] mt-8"
             style={{ fontFamily: "'Press Start 2P', cursive" }}
           >

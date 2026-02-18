@@ -8,7 +8,7 @@ const pressStart = Press_Start_2P({
   subsets: ["latin"],
 });
 
-export default function Countdown({ targetDate = "2025-03-01T23:59:59" }) {
+export default function Countdown({ targetDate = "2026-02-15T23:59:59" }) {
   const [timeLeft, setTimeLeft] = useState({
     d: "00",
     h: "00",

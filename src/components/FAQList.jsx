@@ -4,6 +4,8 @@ import React from 'react';
 import Dropdown from './ui/Dropdown';
 import TargetCursor from './TargetCursor';
 import { Anonymous_Pro } from "next/font/google";
+import Image from 'next/image';
+import bg_img from '@/assets/images/bg_img.webp';
 
 // Import the font
 import '@/styles/hero.module.css';
@@ -105,7 +107,7 @@ const questions = [
   },
   {
     question: 'What if I have more queries?',
-  answer: 'You can contact us on our social media handles, or email us at community.spec@gmail.com for more efficiency and detailed information.',
+    answer: 'You can contact us on our social media handles, or email us at community.spec@gmail.com for more efficiency and detailed information.',
     category: 'support',
     answerStyle: 'h-28',
     questionStyle: 'h-40',
@@ -146,24 +148,21 @@ const FAQList = () => {
       <TargetCursor targetSelector=".cursor-target" />
 
       {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          // use the requested image from public
-          backgroundImage: 'url(/bg_img_old.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#1a1a1a'
-        }}
-      ></div>
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={bg_img}
+          alt="FAQ Background"
+          fill
+          className="object-cover object-center"
+        />
+      </div>
 
       {/* Dark Overlay */}
-  {/* overlay: ensure a valid Tailwind z-index class so it sits above the bg */}
-  <div className="absolute inset-0 bg-black/40 z-10"></div>
+      {/* overlay: ensure a valid Tailwind z-index class so it sits above the bg */}
+      <div className="absolute inset-0 bg-black/40 z-10"></div>
 
       {/* Content */}
-  <div className="relative z-20 w-full flex flex-col items-center">
+      <div className="relative z-20 w-full flex flex-col items-center">
         <div className="w-full max-w-6xl mt-8">
           <div className="flex flex-col items-center text-center">
             <h2

@@ -4,6 +4,7 @@ import Cards from "./Cards";
 import Data from "@/components/Testimonials/testimonials_data";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function Testimonials() {
   const sectionRef = useRef(null);
@@ -25,13 +26,14 @@ export default function Testimonials() {
         min-h-[260vh] sm:min-h-[280vh] md:min-h-[300vh]
         pt-[14vh] sm:pt-[16vh] md:pt-[18vh]
       "
-      style={{
-        backgroundImage: "url('/backgrounds/bg3.jpg')",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "top center",
-        backgroundSize: "cover",
-      }}
     >
+      <Image
+        src="/backgrounds/bg3.webp"
+        alt="Testimonials Background"
+        fill
+        className="object-cover object-top z-0"
+        priority={false}
+      />
       <div
         className="
       pointer-events-none

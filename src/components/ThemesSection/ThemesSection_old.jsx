@@ -48,7 +48,7 @@ export default function ThemeSection() {
       className="relative py-28 w-screen min-h-[1000px] h-svh pt-[18vh] text-white bg-cover bg-center"
 
       style={{
-        backgroundImage: 'url("/backgrounds/bg2.png")',
+        backgroundImage: 'url("/backgrounds/bg2.webp")',
         backgroundSize: "cover",
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
@@ -123,9 +123,8 @@ export default function ThemeSection() {
                     data-flipped={flippedId === theme.id}
                   >
                     <div
-                      className={`flip-inner ${
-                        flippedId === theme.id ? "is-flipped" : ""
-                      }`}
+                      className={`flip-inner ${flippedId === theme.id ? "is-flipped" : ""
+                        }`}
                     >
                       {/* FRONT */}
                       <div className="flip-front">

@@ -102,7 +102,7 @@ export default function CodeOfConduct() {
               </PolicyItem>
 
               <PolicyItem title="Consequences">
-                Organisers reserve the right to take corrective action against individuals found in violation of the harassment policy. This may include issuing warnings, expulsion from the event, or involving law enforcement authorities as necessary.
+                Organizers reserve the right to take corrective action against individuals found in violation of the harassment policy. This may include issuing warnings, expulsion from the event, or involving law enforcement authorities as necessary.
               </PolicyItem>
             </div>
           </section>

@@ -1,15 +1,26 @@
 "use client";
 
+import Image from "next/image";
+import bg_img from "@/assets/images/bg_img.webp";
 import styles from "@/styles/comingsoon.module.css";
 import heroStyles from "@/styles/hero.module.css";
 
 export default function ComingSoon() {
   return (
     <section className={styles.comingSoon} id="coming-soon">
-      <div className={styles.container}>
+      <Image
+        src={bg_img}
+        alt="Coming Soon Background"
+        fill
+        className="object-cover object-center z-0"
+      />
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/60 z-10" />
+
+      <div className={`${styles.container} relative z-20`}>
 
 
-      <h2 className={`${styles.title} ${heroStyles.title}`}>
+        <h2 className={`${styles.title} ${heroStyles.title}`}>
           PRIZES AND CHALLENGES
         </h2>
 

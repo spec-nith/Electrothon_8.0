@@ -104,7 +104,7 @@ export default function MainPage() {
         </div>
 
         {/* Countdown HUD */}
-        <Countdown targetDate="2026-01-31T23:59:59+05:30" />
+        <Countdown targetDate="2026-02-15T23:59:59+05:30" />
       </div>
     </>
   );

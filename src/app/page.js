@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 // Critical components - load immediately
 import MainPage from "../components/MainPage/MainPage";
@@ -20,6 +21,7 @@ const ComingSoon = dynamic(() => import("@/components/ComingSoon"));
 const Sponsors = dynamic(() => import("@/components/Sponsors"));
 const Timeline = dynamic(() => import("@/components/Timeline/timeline"));
 const Testimonials = dynamic(() => import("@/components/Testimonials/Testimonials"));
+const Organizers = dynamic(() => import("@/components/Organizers/Organizers"));
 const FAQList = dynamic(() => import("@/components/FAQList"));
 const Footer = dynamic(() => import("@/components/Footer"));
 
@@ -30,10 +32,10 @@ export default function Page() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -43,12 +45,14 @@ export default function Page() {
       {isMobile ? (
         <MissionBriefing />
       ) : (
-        <div
-          style={{
-            minHeight: "100vh",
-            background: "url('/sections/mission-briefing-bg.png') center / cover no-repeat",
-          }}
-        >
+        <div className="relative w-full min-h-screen">
+          <Image
+            src="/sections/mission-briefing-bg.webp"
+            alt="Mission Briefing Background"
+            fill
+            className="object-cover object-center -z-10"
+            priority
+          />
           <AboutUsAchievementWith3D />
         </div>
       )}
@@ -59,6 +63,7 @@ export default function Page() {
       <Sponsors />
       <Timeline />
       <Testimonials />
+      <Organizers />
       <FAQList />
       <Footer />
     </>
