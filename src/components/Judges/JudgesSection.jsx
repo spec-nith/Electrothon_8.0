@@ -31,44 +31,42 @@ const judgesData = [
   {
     image: "/judges/Adhiraj.webp",
     name: "Adhiraj",
-    
-    
   },
   {
     image: "/judges/EeshaanSawant.webp",
     name: "Eeshaan Sawant",
-    
-    
   },
   {
     image: "/judges/KanishkTyagi.webp",
     name: "Kanishk Tyagi",
-    
-    
   },
   {
     image: "/judges/Mahen.webp",
     name: "Mahen",
-    
-    
   },
   {
     image: "/judges/Manav.webp",
     name: "Manav",
-    
-    
   },
   {
     image: "/judges/mohitbhat.webp",
     name: "Mohit Bhat",
-    
-    
   },
   {
     image: "/judges/UdayveerSingh.webp",
     name: "Udayveer Singh",
-    
-    
+  },
+  {
+    image: "/judges/Devansh.webp",
+    name: "Devansh Sood",
+  },
+  {
+    image: "/judges/Rashika.webp",
+    name: "Rashika",
+  },
+  {
+    image: "/judges/Sanidhya.webp",
+    name: "Sanidhya Goel",
   },
 ];
 

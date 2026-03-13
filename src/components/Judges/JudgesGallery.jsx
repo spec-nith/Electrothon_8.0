@@ -41,7 +41,13 @@ export default function JudgesGallery({ judges }) {
         aria-label="Previous judges"
         onClick={() => scrollByCard(-1)}
         className={styles.button}
-        style={{ position: 'absolute', left: '0.5rem', top: '50%', transform: 'translateY(-50%)', zIndex: 20 }}
+        style={{
+          position: "absolute",
+          left: "0.5rem",
+          top: "50%",
+          transform: "translateY(-50%) scale(1.5)",
+          zIndex: 20,
+        }}
       >
         ‹
       </button>
@@ -50,7 +56,7 @@ export default function JudgesGallery({ judges }) {
       <div
         ref={scrollerRef}
         className={styles.scroller}
-        style={{ padding: '1rem' }}
+        style={{ padding: "1rem" }}
       >
         <div className={styles.track}>
           {items.map((judge, index) => (
@@ -58,21 +64,13 @@ export default function JudgesGallery({ judges }) {
               key={`${judge.title}-${index}`}
               data-judge-card
               className={`${styles.slide} cursor-target`}
-              onMouseEnter={(e) => {
-                e.currentTarget.closest(`.${styles.track}`).style.animationPlayState = 'paused';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.closest(`.${styles.track}`).style.animationPlayState = 'running';
-              }}
             >
               <TiltedCard
                 imageSrc={judge.image}
                 altText={judge.title}
                 captionText={judge.caption || judge.title}
               />
-              <div className={styles.slideName}>
-                {judge.name}
-              </div>
+              <div className={styles.slideName}>{judge.name}</div>
             </div>
           ))}
         </div>
@@ -83,7 +81,13 @@ export default function JudgesGallery({ judges }) {
         aria-label="Next judges"
         onClick={() => scrollByCard(1)}
         className={styles.button}
-        style={{ position: 'absolute', right: '0.5rem', top: '50%', transform: 'translateY(-50%)', zIndex: 20 }}
+        style={{
+          position: "absolute",
+          right: "0.5rem",
+          top: "50%",
+          transform: "translateY(-50%) scale(1.5)",
+          zIndex: 20,
+        }}
       >
         ›
       </button>
