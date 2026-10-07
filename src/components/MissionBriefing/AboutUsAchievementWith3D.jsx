@@ -10,10 +10,10 @@ import styles from "../../styles/mission.module.css";
 gsap.registerPlugin(ScrollTrigger);
 
 const achievements = [
-  { number: "85+", labelTop: "TEAMS" },
+  { number: "140+", labelTop: "TEAMS" },
   { number: "2500+", labelTop: "REGISTRATIONS" },
-  { number: "60+", labelTop: "SOFTWARE", labelBottom: "PROJECTS" },
-  { number: "25+", labelTop: "HARDWARE", labelBottom: "PROJECTS" },
+  { number: "100+", labelTop: "SOFTWARE", labelBottom: "PROJECTS" },
+  { number: "40+", labelTop: "HARDWARE", labelBottom: "PROJECTS" },
 ];
 
 export default function AboutUsAchievementWith3D() {
