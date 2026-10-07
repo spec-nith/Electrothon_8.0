@@ -11,13 +11,13 @@ export default function Organizers() {
   // Explicit source arrays for each logical slider (no overlap)
   // Sorted alphabetically by name (case-insensitive)
   const sliderAImages = [
-    "organizer3.jpeg","organizer4.jpeg","organizer6.jpeg",
-    "organizer5.jpeg","organizer7.jpeg","organizer8.jpeg",
-    "organizer9.jpeg","organizer10.jpeg","organizer11.jpeg",
-    "organizer12.jpeg","organizer13.jpeg","organizer14.jpeg",
-    "organizer2.jpeg","organizer15.jpeg","organizer16.jpeg",
-    "organizer17.jpeg","organizer18.jpeg","organizer19.jpeg",
-    "organizer21.jpeg","organizer23.jpeg","organizer24.jpeg","Organiserleft.webp",
+    "organizer3.webp","organizer4.webp","organizer6.webp",
+    "organizer5.webp","organizer7.webp","organizer8.webp",
+    "organizer9.webp","organizer10.webp","organizer11.webp",
+    "organizer12.webp","organizer13.webp","organizer14.webp",
+    "organizer2.webp","organizer15.webp","organizer16.webp",
+    "organizer17.webp","organizer18.webp","organizer19.webp",
+    "organizer21.webp","organizer23.webp","organizer24.webp",
   ];
 
   const sliderANames = [
@@ -52,33 +52,33 @@ export default function Organizers() {
 
   // Slider 2: exactly 27 organizers (25..51), all present, sorted alphabetically by name, correct extensions
   const sliderBData = [
-    { name: "Abhinav Mishra", image: "organizer37.jpeg" },
-    { name: "Adarsh Singh", image: "organizer25.jpeg" },
-    { name: "Aditya Kumar", image: "organizer36.jpeg" },
-    { name: "Archita Agarwal", image: "organizer26.jpeg" },
-    { name: "Arpit Tyagi", image: "organizer27.jpeg" },
-    { name: "Arya Thakur", image: "organizer28.jpeg" },
-    { name: "Avaneesh", image: "organizer29.jpeg" },
-    { name: "Gauri Sharma", image: "organizer30.jpeg" },
-    { name: "Harsh Verma", image: "organizer31.jpeg" },
-    { name: "Kaustav Rana", image: "organizer32.jpeg" },
-    { name: "Manan Gupta", image: "organizer38.jpeg" },
-    { name: "Mayank Koundal", image: "organizer33.jpeg" },
-    { name: "Medha Sharma", image: "organizer34.jpeg" },
-    { name: "Nishita", image: "organizer35.jpeg" },
-    { name: "Peeyush Gautam", image: "organizer39.jpeg" },
-    { name: "Prakul Chandra", image: "organizer40.jpeg" },
-    { name: "Pratham Lodha", image: "organizer41.jpeg" },
-    { name: "Rijul Rangta", image: "organizer42.jpeg" },
-    { name: "Ronak Dotasara", image: "organizer43.jpeg" },
-    { name: "Shreya Dhawan", image: "organizer44.jpeg" },
-    { name: "Vaishali Bhatt", image: "organizer45.jpeg" },
-    { name: "Vaishnavi Sharma", image: "organizer46.jpeg" },
-    { name: "Vanni Chauhan", image: "organizer47.jpeg" },
-    { name: "Vanya Sharma", image: "organizer48.jpeg" },
-    { name: "Vidhi", image: "organizer49.jpeg" },
-    { name: "Vyom Pant", image: "organizer50.jpeg" },
-    { name: "Yash Verma", image: "organizer51.jpeg" }
+    { name: "Abhinav Mishra", image: "organizer37.webp" },
+    { name: "Adarsh Singh", image: "organizer25.webp" },
+    { name: "Aditya Kumar", image: "organizer36.webp" },
+    { name: "Archita Agarwal", image: "organizer26.webp" },
+    { name: "Arpit Tyagi", image: "organizer27.webp" },
+    { name: "Arya Thakur", image: "organizer28.webp" },
+    { name: "Avaneesh", image: "organizer29.webp" },
+    { name: "Gauri Sharma", image: "organizer30.webp" },
+    { name: "Harsh Verma", image: "organizer31.webp" },
+    { name: "Kaustav Rana", image: "organizer32.webp" },
+    { name: "Manan Gupta", image: "organizer38.webp" },
+    { name: "Mayank Koundal", image: "organizer33.webp" },
+    { name: "Medha Sharma", image: "organizer34.webp" },
+    { name: "Nishita", image: "organizer35.webp" },
+    { name: "Peeyush Gautam", image: "organizer39.webp" },
+    { name: "Prakul Chandra", image: "organizer40.webp" },
+    { name: "Pratham Lodha", image: "organizer41.webp" },
+    { name: "Rijul Rangta", image: "organizer42.webp" },
+    { name: "Ronak Dotasara", image: "organizer43.webp" },
+    { name: "Shreya Dhawan", image: "organizer44.webp" },
+    { name: "Vaishali Bhatt", image: "organizer45.webp" },
+    { name: "Vaishnavi Sharma", image: "organizer46.webp" },
+    { name: "Vanni Chauhan", image: "organizer47.webp" },
+    { name: "Vanya Sharma", image: "organizer48.webp" },
+    { name: "Vidhi", image: "organizer49.webp" },
+    { name: "Vyom Pant", image: "organizer50.webp" },
+    { name: "Yash Verma", image: "organizer51.webp" }
   ];
   const sliderB = sliderBData.map(d => ({
     name: d.name,
@@ -95,17 +95,17 @@ export default function Organizers() {
     {
       name: "Kritika Singh",
       role: "Lead Organizer",
-      image: "assets/images/organizers/organizer1.jpeg"
+      image: "assets/images/organizers/organizer1.webp"
     },
     {
       name: "Soham Juneja",
       role: "Lead Organizer",
-      image: "/assets/images/organizers/organizer20.jpeg"
+      image: "/assets/images/organizers/organizer20.webp"
     },
     {
       name: "Tejasv Singh Hada",
       role: "Lead Organizer",
-      image: "/assets/images/organizers/organizer22.jpeg"
+      image: "/assets/images/organizers/organizer22.webp"
     }
   ];
 

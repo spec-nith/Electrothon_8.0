@@ -12,6 +12,52 @@
 const Data = [
   {
     id: "1",
+    name: "Archit",
+    profilepic: "/testimonials/Archit/profile.webp",
+    date: "4 month",
+    content:
+      "Electrothon 8.0 has officially wrapped up, and what an incredible experience it has been 🚀 Grateful to be part of such an amazing hackathon where innovation, collaboration, and learning came together at one place. From brainstorming ideas to building solutions under pressure — every moment was worth it!",
+    postpic: "/testimonials/Archit/1773811977891.webp",
+  },
+  {
+    id: "2",
+    name: "Ashish Gupta",
+    profilepic: "/testimonials/default_pfp.svg",
+    date: "13w",
+    content:
+      "“Electrothon 8.0 was an intense and rewarding experience filled with innovation, teamwork, and real-world problem-solving. Building MedConnect and being recognized with the Best Use of Gemini API award made the journey even more memorable. Huge thanks to SPEC NITH, the mentors, judges, sponsors, and teammates for making this experience truly inspiring!”",
+    postpic: "/testimonials/Ashish Gupta/1774377013283.jpg",
+  },
+  {
+    id: "3",
+    name: "Kausheki Deb",
+    profilepic: "/testimonials/default_pfp.svg",
+    date: "1w",
+    content:
+      "Electrothon 8.0 at NIT Hamirpur was an incredible journey of rapid prototyping, coding, and collaborative problem-solving. The experience provided valuable technical learning, industry exposure, and lifelong memories. Special thanks to the organizers at NIT Hamirpur SPEC NITH, mentors, teammates, and SGT University for their immense support and encouragement throughout the hackathon.",
+    postpic: "/testimonials/Kausheki Deb/1774840885787.jpg",
+  },
+  {
+    id: "4",
+    name: "Sayam Sharma",
+    profilepic: "/testimonials/Sayam Sharma/profile.webp",
+    date: "1w",
+    content:
+      "\"Still reflecting on how impactful Electrothon 8.0 - Labyrinnh of Eternum turned out to be. Really impressive work at Electrothon 8.0! The idea of using AI to turn simple prompts into functional applications is both innovative and practical. GenMobi.Studio is a truly impressive concept.\"",
+    postpic: "/testimonials/Sayam Sharma/1774449952412.jpg",
+  },
+  {
+    id: "5",
+    name: "Tanisha Singh",
+    profilepic: "/testimonials/default_pfp.svg",
+    date: "6 month",
+    content:
+      "What an incredible journey at Electrothon 8.0! GenMobi.Studio sounds like an amazing innovation, and the Best Use of Gemini API recognition is truly well deserved.",
+    postpic: "/testimonials/Tanisha Singh/1774543019395.webp",
+  },
+  /*
+  {
+    id: "old-1",
     name: "Purva Uppal",
     profilepic: "/testimonials/pfp1.jpeg",
     date: "6mo",
@@ -20,7 +66,7 @@ const Data = [
     postpic: "/testimonials/first.jpeg",
   },
   {
-    id: "2",
+    id: "old-2",
     name: "Ms Vaani",
     profilepic: "/testimonials/pfp2.jpeg",
     date: "6mo",
@@ -29,7 +75,7 @@ const Data = [
     postpic: "/testimonials/second.jpeg",
   },
   {
-    id: "3",
+    id: "old-3",
     name: "Rohan Mishra",
     profilepic: "/testimonials/pfp3.jpeg",
     date: "5mo",
@@ -38,7 +84,7 @@ const Data = [
     postpic: "/testimonials/third.jpeg",
   },
   {
-    id: "4",
+    id: "old-4",
     name: "ObsiHive",
     profilepic: "/testimonials/pfp4.jpeg",
     date: "6mo",
@@ -47,7 +93,7 @@ const Data = [
     postpic: "/testimonials/fourth.jpeg",
   },
   {
-    id: "5",
+    id: "old-5",
     name: "Aarya Jamwal",
     profilepic: "/testimonials/pfp5.jpeg",
     date: "6mo",
@@ -56,7 +102,7 @@ const Data = [
     postpic: "/testimonials/fifth.jpeg",
   },
   {
-    id: "6",
+    id: "old-6",
     name: "Tania Sathwara",
     profilepic: "/testimonials/pfp6.jpeg",
     date: "6mo",
@@ -64,9 +110,8 @@ const Data = [
       "💙 Proud to have built AnnSetu as our project for Electrothon 7.0, Colosseum Of Code at NIT Hamirpur...",
     postpic: "/testimonials/sixth.jpeg",
   },
-  /*
   {
-    id: "7",
+    id: "old-7",
     name: "Veer Vanshaj Wadehra",
     profilepic: "/testimonials/pfp7.jpeg",
     date: "6mo",
@@ -75,7 +120,7 @@ const Data = [
     postpic: "/testimonials/seventh.jpeg",
   },
   {
-    id: "8",
+    id: "old-8",
     name: "Monish Solanki",
     profilepic: "/testimonials/pfp8.jpeg",
     date: "6mo",
@@ -84,7 +129,7 @@ const Data = [
     postpic: "/testimonials/eighthh.jpeg",
   },
   {
-    id: "9",
+    id: "old-9",
     name: "Trishna Garg",
     profilepic: "/testimonials/pfp9.jpeg",
     date: "6mo",
@@ -93,7 +138,7 @@ const Data = [
     postpic: "/testimonials/ninth.jpeg",
   },
   {
-    id: "10",
+    id: "old-10",
     name: "Seerat Kaur",
     profilepic: "/testimonials/pfp10.jpeg",
     date: "6mo",
@@ -102,7 +147,7 @@ const Data = [
     postpic: "/testimonials/tenth.jpeg",
   },
   {
-    id: "11",
+    id: "old-11",
     name: "Priya Goyal",
     profilepic: "/testimonials/pfp11.jpeg",
     date: "6mo",

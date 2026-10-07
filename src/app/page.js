@@ -33,6 +33,10 @@ const Themes = dynamic(() => import("@/components/ThemesSection/ThemesSection"),
   loading: () => <div className="min-h-screen" />,
 });
 
+const Winners = dynamic(() => import("@/components/Winners/Winners"), {
+  loading: () => <div className="min-h-screen" />,
+});
+
 const ComingSoon = dynamic(() => import("@/components/ComingSoon"), {
   loading: () => <div className="min-h-screen" />,
 });
@@ -88,7 +92,7 @@ export default function Page() {
   return (
     <>
       <MainPage />
-      
+
       {isMobile ? (
         <MissionBriefing />
       ) : (
@@ -133,13 +137,14 @@ export default function Page() {
           }}
         />
         <div className="absolute inset-0 z-[0] bg-black/10" />
-        
+
         {/* Content */}
         <div className="relative z-10">
           <JudgesSection />
           <Themes />
         </div>
       </div>
+      <Winners />
       <ComingSoon />
       <Assortedprizes />
       <Sponsors />
