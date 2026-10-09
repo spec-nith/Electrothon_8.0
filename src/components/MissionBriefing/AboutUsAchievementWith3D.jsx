@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const achievements = [
   { number: "140+", labelTop: "TEAMS" },
-  { number: "2500+", labelTop: "REGISTRATIONS" },
+  { number: "3500+", labelTop: "REGISTRATIONS" },
   { number: "100+", labelTop: "SOFTWARE", labelBottom: "PROJECTS" },
   { number: "40+", labelTop: "HARDWARE", labelBottom: "PROJECTS" },
 ];
