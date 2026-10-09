@@ -71,7 +71,7 @@ export default function Countdown({ targetDate = "2026-03-13T23:59:59" }) {
           mb-2
         `}
       >
-        HACKATHON BEGINS IN
+        HACKATHON ENDED
       </div>
 
       {/* NUMBERS */}
